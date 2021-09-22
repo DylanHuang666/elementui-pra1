@@ -10,6 +10,7 @@
           end: '18:30',
         }"
         placeholder="选择时间"
+        @change="timePickerChange2"
       >
       </el-time-select>
     </div>
@@ -20,6 +21,7 @@
           selectableRange: '18:30:00 - 20:30:00',
         }"
         placeholder="任意时间点"
+        @change="timePickerChange3"
       >
       </el-time-picker>
       <el-time-picker
@@ -63,6 +65,12 @@ export default {
   methods: {
     timePickerChange() {
       console.log('timePickerChange',this.value3)
+    },
+    timePickerChange2() {
+      console.log('timePickerChange2',this.value)
+    },
+    timePickerChange3() {
+      console.log('timePickerChange3',this.value1)
     },
   },
 };

@@ -1,98 +1,206 @@
 <template>
   <div>
-    Radio 单选框
     <div>
-      <el-radio v-model="radio" label="1" disabled border>备选项1</el-radio>
-      <el-radio v-model="radio" label="2" border>备选项2</el-radio>
-      <el-radio v-model="radio" label="3" border>备选项3</el-radio>
+      <el-form ref="form" :model="form" label-width="80px">
+        <el-form-item label="活动名称">
+          <el-input v-model="form.name"></el-input>
+        </el-form-item>
+        <el-form-item label="活动区域">
+          <el-select v-model="form.region" placeholder="请选择活动区域">
+            <el-option label="区域一" value="shanghai"></el-option>
+            <el-option label="区域二" value="beijing"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="活动时间">
+          <el-col :span="11">
+            <el-date-picker
+              type="date"
+              placeholder="选择日期"
+              v-model="form.date1"
+              style="width: 100%;"
+            ></el-date-picker>
+          </el-col>
+          <el-col class="line" :span="2">-</el-col>
+          <el-col :span="11">
+            <el-time-picker placeholder="选择时间" v-model="form.date2" style="width: 100%;"></el-time-picker>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="即时配送">
+          <el-switch v-model="form.delivery"></el-switch>
+        </el-form-item>
+        <el-form-item label="活动性质">
+          <el-checkbox-group v-model="form.type">
+            <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
+            <el-checkbox label="地推活动" name="type"></el-checkbox>
+            <el-checkbox label="线下主题活动" name="type"></el-checkbox>
+            <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
+          </el-checkbox-group>
+        </el-form-item>
+        <el-form-item label="特殊资源">
+          <el-radio-group v-model="form.resource">
+            <el-radio label="线上品牌商赞助"></el-radio>
+            <el-radio label="线下场地免费"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="活动形式">
+          <el-input type="textarea" v-model="form.desc"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit">立即创建</el-button>
+          <el-button>取消</el-button>
+        </el-form-item>
+      </el-form>
     </div>
 
-    <div>
-      <el-radio-group v-model="radio2" @change="change1">
-        <el-radio :label="1">备选项1</el-radio>
-        <el-radio :label="2">备选项2</el-radio>
-        <el-radio :label="3">备选项3</el-radio>
-      </el-radio-group>
-    </div>
-
-    <div>
-      <el-radio-group v-model="radio3" @change="change1" size="mini">
-        <el-radio-button label="上海"></el-radio-button>
-        <el-radio-button label="北京"></el-radio-button>
-        <el-radio-button label="广州"></el-radio-button>
-        <el-radio-button label="深圳"></el-radio-button>
-      </el-radio-group>
-    </div>
-
-    Checkbox 多选框
-    <div>
-      <el-checkbox v-model="checked1">备选项1</el-checkbox>
-      <el-checkbox v-model="checked2">备选项2</el-checkbox>
-    </div>
-    <div>
-      <el-checkbox-group v-model="checkList">
-        <el-checkbox label="复选框 A"></el-checkbox>
-        <el-checkbox label="复选框 B"></el-checkbox>
-        <el-checkbox label="复选框 C"></el-checkbox>
-        <el-checkbox label="禁用" disabled></el-checkbox>
-        <el-checkbox label="选中且禁用" disabled></el-checkbox>
-      </el-checkbox-group>
-    </div>
-    <div style="margin: 15px 0;"></div>
-    <div>
-      <el-checkbox
-        :indeterminate="isIndeterminate"
-        v-model="checkAll"
-        @change="handleCheckAllChange"
-        >全选</el-checkbox
+    <div style="margin-top:80px;">
+      表单验证
+      <el-form
+        :model="ruleForm"
+        :rules="rules"
+        ref="ruleForm"
+        label-width="100px"
+        class="demo-ruleForm"
       >
-      <el-checkbox-group
-        v-model="checkedCities"
-        @change="handleCheckedCitiesChange"
-      >
-        <el-checkbox v-for="city in cities" :label="city" :key="city">{{
-          city
-        }}</el-checkbox>
-      </el-checkbox-group>
+        <el-form-item label="活动名称" prop="name">
+          <el-input v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item label="活动区域" prop="region">
+          <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+            <el-option label="区域一" value="shanghai"></el-option>
+            <el-option label="区域二" value="beijing"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="活动时间" required>
+          <el-col :span="11">
+            <el-form-item prop="date1">
+              <el-date-picker
+                type="date"
+                placeholder="选择日期"
+                v-model="ruleForm.date1"
+                style="width: 100%;"
+              ></el-date-picker>
+            </el-form-item>
+          </el-col>
+          <el-col class="line" :span="2">-</el-col>
+          <el-col :span="11">
+            <el-form-item prop="date2">
+              <el-time-picker placeholder="选择时间" v-model="ruleForm.date2" style="width: 100%;"></el-time-picker>
+            </el-form-item>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="即时配送" prop="delivery">
+          <el-switch v-model="ruleForm.delivery"></el-switch>
+        </el-form-item>
+        <el-form-item label="活动性质" prop="type">
+          <el-checkbox-group v-model="ruleForm.type">
+            <el-checkbox label="美食/餐厅线上活动" name="type"></el-checkbox>
+            <el-checkbox label="地推活动" name="type"></el-checkbox>
+            <el-checkbox label="线下主题活动" name="type"></el-checkbox>
+            <el-checkbox label="单纯品牌曝光" name="type"></el-checkbox>
+          </el-checkbox-group>
+        </el-form-item>
+        <el-form-item label="特殊资源" prop="resource">
+          <el-radio-group v-model="ruleForm.resource">
+            <el-radio label="线上品牌商赞助"></el-radio>
+            <el-radio label="线下场地免费"></el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="活动形式" prop="desc">
+          <el-input type="textarea" v-model="ruleForm.desc"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+          <el-button @click="resetForm('ruleForm')">重置</el-button>
+        </el-form-item>
+      </el-form>
     </div>
   </div>
 </template>
 
 <script>
-const cityOptions = ["上海", "北京", "广州", "深圳"];
 export default {
   data() {
     return {
-      radio: "2",
-      radio2: "1",
-      radio3: "北京",
-      checked1: false,
-      checked2: true,
-      checkList: ["选中且禁用", "复选框 C", "复选框 A"],
-      checkAll: false,
-      checkedCities: ["上海", "北京"],
-      cities: cityOptions,
-      isIndeterminate: true,
+      form: {
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      },
+      //表单校验
+      ruleForm: {
+        name: "",
+        region: "",
+        date1: "",
+        date2: "",
+        delivery: false,
+        type: [],
+        resource: "",
+        desc: ""
+      },
+      rules: {
+        name: [
+          { required: true, message: "请输入活动名称", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ],
+        region: [
+          { required: true, message: "请选择活动区域", trigger: "change" }
+        ],
+        date1: [
+          {
+            type: "date",
+            required: true,
+            message: "请选择日期",
+            trigger: "change"
+          }
+        ],
+        date2: [
+          {
+            type: "date",
+            required: true,
+            message: "请选择时间",
+            trigger: "change"
+          }
+        ],
+        type: [
+          {
+            type: "array",
+            required: true,
+            message: "请至少选择一个活动性质",
+            trigger: "change"
+          }
+        ],
+        resource: [
+          { required: true, message: "请选择活动资源", trigger: "change" }
+        ],
+        desc: [{ required: true, message: "请填写活动形式", trigger: "blur" }]
+      }
+      //表单校验
     };
   },
   methods: {
-    change1(v) {
-      //v: 选中label值
-      console.log("change1", v,this.radio3);
+    onSubmit(e) {
+      console.log("submit!", e);
     },
-    handleCheckAllChange(val) {
-      // val: 布尔值是否全选
-      console.log('handleCheckAllChange',val,this.checkAll)
-      this.checkedCities = val ? cityOptions : [];
-      this.isIndeterminate = false;
+    submitForm(formName) {
+      this.$refs[formName].validate(valid => {
+        console.log("valid", valid);
+        if (valid) {
+          alert("submit!");
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
     },
-    handleCheckedCitiesChange(value) {
-      let checkedCount = value.length;
-      this.checkAll = checkedCount === this.cities.length;
-      this.isIndeterminate =
-        checkedCount > 0 && checkedCount < this.cities.length;
-    },
-  },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    }
+  }
 };
 </script>
 
