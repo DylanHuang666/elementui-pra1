@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Table from '../views/table/index.vue'
 
 Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Table',
+    component: Table
   },
   {
     path: '/about',
@@ -53,11 +53,96 @@ const routes = [{
     component: () => import('../views/Form2.vue')
   },
   {
-    path: '/component1',
-    name: 'Component1',
-    component: () => import('../views/Component1.vue')
+    path: '/tagTime', //标记选择组件
+    name: 'TagTime',
+    component: () => import('../views/work/TagTime.vue')
+  },
+  {
+    path: '/upload',
+    name: 'Upload',
+    component: () => import('../views/upload/index.vue')
+  },
+  {
+    path: '/progress',
+    name: 'Progress',
+    component: () => import('../views/Progress.vue')
+  },
+  {
+    path: '/Tree',
+    name: 'Tree',
+    component: () => import('../views/tree/index.vue')
+  },
+  {
+    path: '/Dialog',
+    name: 'Dialog',
+    component: () => import('../views/dialog/index.vue')
+  },
+  {
+    path: '/Carousel',
+    name: 'Carousel',
+    component: () => import('../views/carousel/index.vue')
+  },
+  {
+    path: '/Timeline',
+    name: 'Timeline',
+    component: () => import('../views/timeline/index.vue')
+  },
+  {
+    path: '/Image',
+    name: 'Image',
+    component: () => import('../views/image/index.vue')
+  },
+  {
+    path: '/Notice',
+    name: 'Notice',
+    component: () => import('../views/Notice.vue')
+  },
+  {
+    path: '/NavMenu',
+    name: 'NavMenu',
+    component: () => import('../views/navMenu/index.vue')
+  },
+  {
+    path: '/Tabs',
+    name: 'Tabs',
+    component: () => import('../views/tabs/index.vue')
+  },
+  {
+    path: '/Steps',
+    name: 'Steps',
+    component: () => import('../views/steps/index.vue')
+  },
+  {
+    path: '/Pagination',
+    name: 'Pagination',
+    component: () => import('../views/pagination/index.vue')
+  },
+  {
+    path: '/Echarts',
+    name: 'Echarts',
+    component: () => import('../views/echarts/index.vue')
+  },
+  {
+    path: '/animation',
+    name: 'animation',
+    component: () => import('../views/animation.vue')
+  },
+  {
+    path: '/animation2',
+    name: 'animation2',
+    component: () => import('../views/animation2.vue')
+  },
+  {
+    path: '/animation3',
+    name: 'animation3',
+    component: () => import('../views/animation/animation3.vue')
+  },
+  {
+    path: '/props',
+    name: 'props',
+    component: () => import('../views/props/index.vue')
   }
-
+  
 ]
 
 const router = new VueRouter({
