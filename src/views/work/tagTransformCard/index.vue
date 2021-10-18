@@ -4,101 +4,101 @@
       <div class="dd">
         <div v-for="(item, index) in arr1" :key="index">{{ item }}</div>
       </div>
-    </div> -->
+    </div>-->
 
     <div class="user-img"></div>
 
     <!-- if else -->
-    <div v-if="dan" class="tags-box" key="1">
+    <div v-if="dan" class="tags-box" key="a">
       <div class="dd">
-        <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 1 }}</span>
+        <div class="img-box" v-for="(item,index) in arr1" :key="index">
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[index] }}</span>
+        </div>
+        <!-- <div class="img-box">
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[1] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 2 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[2] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 3 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[3] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 4 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[4] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 5 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[5] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 6 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[6] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 7 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[7] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 8 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[8] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 9 }}</span>
-        </div>
-        <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 10 }}</span>
-        </div>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[9] }}</span>
+        </div>-->
       </div>
     </div>
-    <div v-else class="tags-box" key="2">
+    <div v-else class="tags-box" key="b">
       <div class="dd">
         <!-- <div v-for="(item, index) in arr1" :key="index">
           <img class="img" src="@/assets/svg/u694.svg" alt="" />
           <span class="tag-name">{{ item }}</span>
-        </div> -->
-        <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 1 }}</span>
+        </div>-->
+        <div class="img-box" v-for="(item,index) in arr1" :key="index">
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[index] }}</span>
+        </div>
+        <!-- <div class="img-box">
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[1] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 2 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[2] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 3 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[3] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 4 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[4] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 5 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[5] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 6 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[6] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 7 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[7] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 8 }}</span>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[8] }}</span>
         </div>
         <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 9 }}</span>
-        </div>
-        <div class="img-box">
-          <img class="img" src="@/assets/svg/u694.svg" alt="" />
-          <span class="tag-name">{{ 10 }}</span>
-        </div>
+          <img class="img" src="@/assets/svg/u694.svg" alt />
+          <span class="tag-name">{{ arr1[9] }}</span>
+        </div>-->
       </div>
     </div>
   </div>
@@ -108,27 +108,67 @@
 export default {
   data() {
     return {
-      dan: true,
-      arr1: [1, 2, 3, 4, 5, 6, 7],
-      timer: null,
+      dan: true, //是否是单数页
+      currentPage: 1, //当前页
+      tagsAll: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17], //总数据
+      allNum: 0, //总数据数值
+      allPage: 1, //总页数值
+      arr1: [], //单页展示的数据
+      timer: null //翻转定时器
     };
   },
+  created() {
+    //请求获取到用户所有标签
+    this.arr1 = this.tagsAll.slice(0, 10);
+    this.allNum = this.tagsAll.length;
+    this.allPage = Math.ceil(this.allNum / 10);
+    // console.log('this.allPage',this.allPage)
+  },
   methods: {
+    //鼠标移入执行函数
     enterHandle() {
       console.log(111);
       if (this.timer) {
         clearInterval(this.timer);
       }
+      // setTimeout(() => {
+      //   this.arr1 = this.tagsAll.slice(
+      //     10 * this.currentPage,
+      //     10 * (this.currentPage + 1)
+      //   );
+      // }, 2000);
       this.timer = setInterval(() => {
-        this.dan = !this.dan;
-        if (this.dan) {
-          this.arr1 = [1, 2, 3, 4, 5, 6, 7];
-          console.log("true", this.arr1);
+        if (this.currentPage == this.allPage) {
+          this.currentPage = 1;
         } else {
-          this.arr1 = [11, 12, 13, 14, 15, 16, 17];
-          console.log("false", this.arr1);
+          this.currentPage = this.currentPage + 1;
         }
-      }, 2300);
+        this.dan = !this.dan;
+        // if (this.dan) {
+        //   this.arr1 = [1, 2, 3, 4, 5, 6, 7];
+        //   console.log("true", this.arr1);
+        // } else {
+        //   this.arr1 = [11, 12, 13, 14, 15, 16, 17];
+        //   console.log("false", this.arr1);
+        // }
+        this.arr1 = this.tagsAll.slice(
+          10 * (this.currentPage - 1),
+          10 * this.currentPage
+        );
+        // setTimeout(() => {
+        //   if (this.currentPage == this.allPage) {
+        //     this.currentPage = 1;
+        //   } else {
+        //     this.currentPage = this.currentPage + 1;
+        //   }
+        //   this.arr1 = this.tagsAll.slice(
+        //     10 * (this.currentPage - 1),
+        //     10 * this.currentPage
+        //   );
+        // }, 2000);
+        console.log("this.currentPage", this.currentPage);
+        console.log("this.arr1", this.arr1);
+      }, 3000);
     },
     // enterHandle() {
     //   timer = setInterval(() => {
@@ -145,8 +185,8 @@ export default {
     leaveHandle() {
       clearInterval(this.timer);
       console.log("clearInterval");
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -196,7 +236,6 @@ export default {
 .dd {
   width: 892px;
   height: 360px;
-  // border: 1px solid blue;
   display: flex;
   flex-wrap: wrap;
   position: relative;
@@ -207,10 +246,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  // background: blue;
-  // margin-bottom: 10px;
-  // margin-left: 30px;
-  // margin-right: 30px;
   color: #ffffff;
 }
 .img {
@@ -219,6 +254,15 @@ export default {
 }
 .tag-name {
   position: absolute;
+  font-size: 12px;
+  padding: 0 8px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipise;
+  -webkit-line-clamp: 1;
+  word-wrap: break-word;
+  white-space: normal;
+  -webkit-box-orient: vertical;
 }
 .user-img {
   width: 170px;
@@ -327,4 +371,6 @@ export default {
   }
 }
 </style>
+
+
 

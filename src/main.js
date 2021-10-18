@@ -11,6 +11,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 import * as echarts from 'echarts';
 Vue.prototype.$echarts = echarts
 
+//vue-moment
+Vue.use(require('vue-moment'));
+
+require('@/utils/moment-zh.js')
+
 Vue.use(ElementUI);
 
 Vue.config.productionTip = false
