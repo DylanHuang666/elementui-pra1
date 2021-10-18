@@ -195,7 +195,7 @@ export default {
 #board {
   width: 400px;
   height: 300px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-right: 45px;
 }
 /* #board2 {
