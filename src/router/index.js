@@ -141,6 +141,11 @@ const routes = [{
     path: '/props',
     name: 'props',
     component: () => import('../views/props/index.vue')
+  },
+  {
+    path: '/work',
+    name: 'work',
+    component: () => import('../views/work/index.vue')
   }
   
 ]
