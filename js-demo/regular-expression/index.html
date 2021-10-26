@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .my-element {
+      animation: zoomOut;
+      /* referring directly to the animation's @keyframe declaration */
+      /* animation-delay: 1s; */
+      animation-duration: 4s;
+      /* animation-iteration-count:infinite; */
+      /* animation-direction:alternate; */
+      /* don't forget to set a duration! */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box ">
+    <h1 class="animate__animated my-element">An animated element</h1>
+  </div>
+
+  <script>
+    let b = isNaN('123')
+    console.log('b', b)
+
+    let str1 = '1256saf667sa6'
+    let reg1 = /\d+/g
+    let arr1 = str1.match(reg1)
+    console.log('arr1', arr1)
+    // [0: "1256"
+    // groups: undefined
+    // index: 0
+    // input: "1256saf667sa6"
+    // length: 1]
+
+    let reg2 = new RegExp('\\d+', 'g')
+    // let b2 = reg2.test('1256saf667sa6')
+    // console.log('b2',b2)
+
+    let arr2 = reg2.exec('1256saf667sa6')
+    let arr3 = reg2.exec('1256saf667sa6')
+    console.log('arr2', arr2, arr3)
+
+    //分组
+    let str2 = "$name=zhangsan&age=23"
+    let reg3 = /\$(?<str>\w+)/
+    let res = str2.match(reg3)
+    console.log('res',res)
+
+    //正向肯定断言
+    let str3 = "iphone5iphone7iphoneNumber"
+    let reg4 = /iphone(?=\d{1,2})/g
+    let res2 = str3.match(reg4)
+    console.log('res2',res2) //['iphone','iphone']
+
+
+  </script>
+</body>
+
+</html>

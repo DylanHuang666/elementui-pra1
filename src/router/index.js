@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Table from '../views/table/index.vue'
+import Table from '../views/elementui/table/index.vue'
 
 Vue.use(VueRouter)
 
@@ -20,37 +20,37 @@ const routes = [{
   {
     path: '/radioAndCheckbox',
     name: 'RadioAndCheckbox',
-    component: () => import('../views/RadioAndCheckbox.vue')
+    component: () => import('../views/elementui/RadioAndCheckbox.vue')
   },
   {
     path: '/input',
     name: 'Input',
-    component: () => import('../views/Input.vue')
+    component: () => import('../views/elementui/Input.vue')
   },
   {
     path: '/timePicker',
     name: 'TimePicker',
-    component: () => import('../views/TimePicker.vue')
+    component: () => import('../views/elementui/TimePicker.vue')
   },
   {
     path: '/datePicker',
     name: 'DatePicker',
-    component: () => import('../views/DatePicker.vue')
+    component: () => import('../views/elementui/DatePicker.vue')
   },
   {
     path: '/select',
     name: 'Select',
-    component: () => import('../views/Select.vue')
+    component: () => import('../views/elementui/Select.vue')
   },
   {
     path: '/form',
     name: 'Form',
-    component: () => import('../views/Form.vue')
+    component: () => import('../views/elementui/Form.vue')
   },
   {
     path: '/form2',
     name: 'Form2',
-    component: () => import('../views/Form2.vue')
+    component: () => import('../views/elementui/Form2.vue')
   },
   {
     path: '/tagTime', //标记选择组件
@@ -60,62 +60,62 @@ const routes = [{
   {
     path: '/upload',
     name: 'Upload',
-    component: () => import('../views/upload/index.vue')
+    component: () => import('../views/elementui/upload/index.vue')
   },
   {
     path: '/progress',
     name: 'Progress',
-    component: () => import('../views/Progress.vue')
+    component: () => import('../views/elementui/Progress.vue')
   },
   {
     path: '/Tree',
     name: 'Tree',
-    component: () => import('../views/tree/index.vue')
+    component: () => import('../views/elementui/tree/index.vue')
   },
   {
     path: '/Dialog',
     name: 'Dialog',
-    component: () => import('../views/dialog/index.vue')
+    component: () => import('../views/elementui/dialog/index.vue')
   },
   {
     path: '/Carousel',
     name: 'Carousel',
-    component: () => import('../views/carousel/index.vue')
+    component: () => import('../views/elementui/carousel/index.vue')
   },
   {
     path: '/Timeline',
     name: 'Timeline',
-    component: () => import('../views/timeline/index.vue')
+    component: () => import('../views/elementui/timeline/index.vue')
   },
   {
     path: '/Image',
     name: 'Image',
-    component: () => import('../views/image/index.vue')
+    component: () => import('../views/elementui/image/index.vue')
   },
   {
     path: '/Notice',
     name: 'Notice',
-    component: () => import('../views/Notice.vue')
+    component: () => import('../views/elementui/Notice.vue')
   },
   {
     path: '/NavMenu',
     name: 'NavMenu',
-    component: () => import('../views/navMenu/index.vue')
+    component: () => import('../views/elementui/navMenu/index.vue')
   },
   {
     path: '/Tabs',
     name: 'Tabs',
-    component: () => import('../views/tabs/index.vue')
+    component: () => import('../views/elementui/tabs/index.vue')
   },
   {
     path: '/Steps',
     name: 'Steps',
-    component: () => import('../views/steps/index.vue')
+    component: () => import('../views/elementui/steps/index.vue')
   },
   {
     path: '/Pagination',
     name: 'Pagination',
-    component: () => import('../views/pagination/index.vue')
+    component: () => import('../views/elementui/pagination/index.vue')
   },
   {
     path: '/Echarts',
@@ -151,6 +151,11 @@ const routes = [{
     path: '/vueMomentDemo',
     name: 'vueMomentDemo',
     component: () => import('../views/vueMomentDemo.vue')
+  },
+  {
+    path: '/iconali',
+    name: 'iconali',
+    component: () => import('../views/iconali.vue')
   }
   
 ]
