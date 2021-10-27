@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      border: 1px solid blue;
+      display: grid;
+
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 80px 80px 100px;
+
+      /* 百分比也可以 */
+      /* grid-template-columns: 33.33% 33.33% 33.33%;
+      grid-template-rows: 33.33% 33.33% 33.33%; */
+
+      /* repeat(3, 100px)函数 */
+      /* repeat()重复某种模式也是可以的。 repeat(2, 100px 20px 80px);  */
+      /* grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px); */
+
+      /* 
+      容器：
+      column-gap
+      row-gap
+      gap
+      grid-template-areas: 'a b c'
+                          'd e f'
+                          'g h i';
+
+                          中间一列为点，表示没有用到该单元格，或者该单元格不属于任何区域。
+                          'a . c'
+                          'd . f'
+                          'g . i';
+      grid-auto-flow : row | column | row dense | column dense;
+      justify-items: start | end | center | stretch;
+      align-items: start | end | center | stretch;
+      place-items: <align-items> <justify-items>;
+      justify-content: start | end | center | stretch | space-around | space-between | space-evenly;
+      align-content: start | end | center | stretch | space-around | space-between | space-evenly; 
+      place-content: <align-content> <justify-content>
+      grid-auto-columns
+      grid-auto-rows: 50px; 
+      grid-template属性是grid-template-columns、grid-template-rows和grid-template-areas这三个属性的合并简写形式。
+      grid属性是grid-template-rows、grid-template-columns、grid-template-areas、 grid-auto-rows、grid-auto-columns、grid-auto-flow这六个属性的合并简写形式。
+      */
+
+      /* 
+      子项：
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      grid-column: <grid-column-start> / <grid-column-end>;
+      grid-row: <grid-row-start> / <grid-row-end>;
+      grid-area： 区域名
+      也可以grid-area: <row-start> / <column-start> / <row-end> / <column-end>;
+      justify-self: start | end | center | stretch;
+      align-self: start | end | center | stretch;
+      place-self: <align-self> <justify-self>;
+      */
+
+      align-items: center;
+
+    }
+
+    .item {
+      border: 1px solid red;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div>
+</body>
+
+</html>
