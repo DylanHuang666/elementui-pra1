@@ -156,6 +156,16 @@ const routes = [{
     path: '/iconali',
     name: 'iconali',
     component: () => import('../views/iconali.vue')
+  },
+  {
+    path: '/vueAnimation',
+    name: 'vueAnimation',
+    component: () => import('../views/vue-animation/index.vue')
+  },
+  {
+    path: '/layout-demo', //布局
+    name: 'layoutDemo',
+    component: () => import('../views/layout-demo/index.vue')
   }
   
 ]

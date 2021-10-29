@@ -7,17 +7,25 @@ import '@/assets/css/iconfont.css'
 //element-ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 
 //echarts
-import * as echarts from 'echarts';
-Vue.prototype.$echarts = echarts
+// import * as echarts from 'echarts';
+// Vue.prototype.$echarts = echarts
 
 //vue-moment
 Vue.use(require('vue-moment'));
 
+//monent.js显示中文格式
 require('@/utils/moment-zh.js')
 
-Vue.use(ElementUI);
+//velocity-animate
+// import Velocity from 'velocity-animate' //不能全局引用
+// Vue.prototype.$velocity = Velocity
+
+//gsap
+import gsap from "gsap";
+Vue.prototype.$gsap = gsap
 
 Vue.config.productionTip = false
 

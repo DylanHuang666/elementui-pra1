@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var name = 'my name is window';
+    var obj = {
+      name: 'my name is obj',
+      fn: ()=> {
+        var timer = null;
+        clearInterval(timer);
+        timer = setInterval(() => {
+          console.log(this); //my name is obj
+        }, 1000)
+      }
+    }
+    // obj.fn()
+  </script>
+</body>
+
+</html>
