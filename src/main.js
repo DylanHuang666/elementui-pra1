@@ -27,6 +27,10 @@ require('@/utils/moment-zh.js')
 import gsap from "gsap";
 Vue.prototype.$gsap = gsap
 
+//自己实现的message提示弹框
+import TMessage from '@/components/TMessage/TMessage.js';
+Vue.prototype.$message = TMessage;
+
 Vue.config.productionTip = false
 
 new Vue({

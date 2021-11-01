@@ -52,6 +52,10 @@ export default {
       // }, 2000);
       // this.obj.b.c.d = 100;
       this.arr2[2][2].push(7);
+      this.$message({
+        message:'哈哈哈',
+        type:'warning'
+      })
       console.log("111111", this.obj.a, this.$refs.a.textContent);
       // setTimeout(()=>{
       //   console.log('setTimeout',this.$refs.a.textContent);
