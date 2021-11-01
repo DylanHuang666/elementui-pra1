@@ -166,6 +166,11 @@ const routes = [{
     path: '/layout-demo', //布局
     name: 'layoutDemo',
     component: () => import('../views/layout-demo/index.vue')
+  },
+  {
+    path: '/vue-demo', //布局
+    name: 'vueDemo',
+    component: () => import('../views/vue-demo/index.vue')
   }
   
 ]
