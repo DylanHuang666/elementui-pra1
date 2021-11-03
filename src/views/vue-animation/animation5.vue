@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Velocity from 'velocity-animate'
+import Velocity from "velocity-animate";
 export default {
   data() {
     return {
@@ -35,6 +35,9 @@ export default {
         { msg: "Kung Fury" }
       ]
     };
+  },
+  created() {
+    console.log("this", this);
   },
   computed: {
     computedList: function() {
@@ -50,15 +53,15 @@ export default {
       el.style.height = 0;
     },
     enter: function(el, done) {
-      console.log('enterel',el,el.dataset)
+      console.log("enterel", el, el.dataset);
       var delay = el.dataset.index * 150;
-      setTimeout(function() {
+      setTimeout(() => {
         Velocity(el, { opacity: 1, height: "1.6em" }, { complete: done });
       }, delay);
     },
     leave: function(el, done) {
       var delay = el.dataset.index * 150;
-      setTimeout(function() {
+      setTimeout(() => {
         Velocity(el, { opacity: 0, height: 0 }, { complete: done });
       }, delay);
     }

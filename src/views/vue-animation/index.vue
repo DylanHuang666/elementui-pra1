@@ -1,7 +1,7 @@
 <template>
   <!-- vue动画 -->
   <div>
-    <animation7 />
+    <animation5 />
   </div>
 </template>
 

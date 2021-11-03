@@ -7,7 +7,7 @@
 </template>
 
 <script>
-//moment.js  只能局部引用；  全局import moment from 'moment'; Vue.prototype.$moment = moment;vue会报错！！！
+
 import moment from 'moment'
 export default {
   data(){
@@ -18,6 +18,8 @@ export default {
   },
   created(){
     this.date1 = new Date()
+    console.log('this',this)
+    // console.log('this.$moment',this.$moment)
     this.d1 = moment(this.date1).format("YYYY-MMMM-DD dddd HH:mm:ss a")
     console.log('moment',this.d1)
   }
