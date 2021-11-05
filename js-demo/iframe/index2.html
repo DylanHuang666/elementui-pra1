@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .a {
+      width: 500px;
+      height: 700px !important;
+      background: yellow;
+    } */
+
+    /* iframe.hh{
+      height: 100vh !important;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="b" style="height: 800px;">
+  </div>
+  <!-- <script>
+    console.log('子', window.parent.document.getElementsByTagName("iframe")[0])
+    let el2 = window.parent.document.getElementsByTagName("iframe")[0]
+    el2.classList.add('hh')
+    console.log('window.parent.document.styleSheets', window.parent.document.styleSheets)
+
+    //先创建新的样式表
+    var styleElement = document.createElement('style');
+    styleElement.type = 'text/css';
+    styleElement.appendChild(document.createTextNode('iframe.hh {min-height: 100vh !important;}'));
+    window.parent.document.getElementsByTagName('head')[0].appendChild(styleElement);
+    console.log('window.parent.document.styleSheets2', window.parent.document.styleSheets)
+
+
+    // var styleEl = document.createElement('style')
+    // var styleSheet = styleEl.sheet; //null???
+    // console.log('styleSheet', styleEl.sheet)
+    // styleEl.styleSheet.addRule('iframe.hh', 'height: 100vh !important;');
+    // styleSheet.insertRule('iframe.hh {height: 100vh !important;}', 0);
+
+    // window.parent.document.styleSheets[0].addRule('iframe.hh', 'height: 100vh !important;');
+    // window.parent.document.head.appendChild(styleEl);
+    // console.log('window.parent.document.styleSheets2', window.parent.document.styleSheets)
+    // el2.style.height = '100vh'
+  </script> -->
+</body>
+
+</html>

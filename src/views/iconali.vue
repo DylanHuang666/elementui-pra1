@@ -6,6 +6,10 @@
     <el-button type="primary" icon="iconfont icon-chart-bar" class="btn">搜索</el-button>
     <span class="iconfont icon-chart-bar"></span>
     <span class="el-icon-delete"></span>
+    <div>svg图标:</div>
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-chart-bar"></use>
+    </svg>
   </div>
 </template>
 
