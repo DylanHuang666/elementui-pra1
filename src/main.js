@@ -4,6 +4,9 @@ import router from './router'
 import store from './store'
 import '@/assets/css/iconfont.css'
 
+require('@/utils/svg.js')
+// import '@/utils/svg.js'
+
 //element-ui
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
