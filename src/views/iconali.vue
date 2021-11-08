@@ -13,6 +13,8 @@
     <div>2.svg图标（插件处理）:</div>
     <svg-icon class="aaa" iconClass="gouwuche"/>
     <svg-icon class="bbb" iconClass="order"/>
+    <!-- iconfont的class放到svg图标iconClass也可以 -->
+    <svg-icon class="bbb" iconClass="chart-bar"/>
   </div>
 </template>
 
