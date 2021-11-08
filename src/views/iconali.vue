@@ -6,10 +6,12 @@
     <el-button type="primary" icon="iconfont icon-chart-bar" class="btn">搜索</el-button>
     <span class="iconfont icon-chart-bar"></span>
     <span class="el-icon-delete"></span>
-    <div>svg图标:</div>
+    <div>1.svg图标（外链代码引入）:</div>
     <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-chart-bar"></use>
     </svg>
+    <div>2.svg图标（插件处理）:</div>
+    <svg-icon iconClass="gouwuche"/>
   </div>
 </template>
 
@@ -29,4 +31,7 @@ export default {
   //     margin-left: 5px;
   //   }
   // }
+  .svg-icon{  //在相应的xxx.svg文件中把fill:设置成currentColor或直接去掉，color设置才会生效
+    color: blue;
+  }
 </style>

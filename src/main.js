@@ -39,6 +39,9 @@ Vue.prototype.$gsap = gsap
 import TMessage from '@/components/TMessage/TMessage.js';
 Vue.prototype.$message = TMessage;
 
+//svg
+import '@/icons'
+
 Vue.config.productionTip = false
 
 new Vue({
