@@ -1,6 +1,7 @@
 <template>
   <div>
     <i class="iconfont icon-chart-bar"></i>
+    <i class="iconfont icon-add-circle"></i>
     <i class="el-icon-delete"></i>
     <el-button type="primary" icon="el-icon-search">搜索</el-button>
     <el-button type="primary" icon="iconfont icon-chart-bar" class="btn">搜索</el-button>
@@ -14,7 +15,7 @@
     <svg-icon class="aaa" iconClass="gouwuche"/>
     <svg-icon class="bbb" iconClass="order"/>
     <!-- iconfont的class放到svg图标iconClass也可以 -->
-    <svg-icon class="bbb" iconClass="chart-bar"/>
+    <svg-icon class="bbb" iconClass="add-circle"/>
   </div>
 </template>
 
