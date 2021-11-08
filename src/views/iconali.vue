@@ -11,7 +11,8 @@
         <use xlink:href="#icon-chart-bar"></use>
     </svg>
     <div>2.svg图标（插件处理）:</div>
-    <svg-icon iconClass="gouwuche"/>
+    <svg-icon class="aaa" iconClass="gouwuche"/>
+    <svg-icon class="bbb" iconClass="order"/>
   </div>
 </template>
 
@@ -31,7 +32,14 @@ export default {
   //     margin-left: 5px;
   //   }
   // }
-  .svg-icon{  //在相应的xxx.svg文件中把fill:设置成currentColor或直接去掉，color设置才会生效
+  .svg-icon.aaa{  //在相应的xxx.svg文件中把fill:设置成currentColor或直接去掉，color设置才会生效
     color: blue;
+    font-size: 30px;
+  }
+  .bbb{
+    color: red;
+    font-size: 40px;
+    // width: 50px;
+    // height: 50px;
   }
 </style>
