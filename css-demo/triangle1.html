@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css画三角形</title>
+  <style>
+    .triangle-box {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .triangle {
+      margin: 0 30px;
+    }
+
+    /* 带边框: 要生成有边框的三角形，可以采用两个三角形通过定位重叠到一起实现 */
+    .box {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      /* transform: rotate(90deg); */
+    }
+
+    #triangle-bottomleft {
+      width: 0;
+      height: 0;
+      border-bottom: 100px solid red;
+      border-right: 100px solid transparent;
+    }
+
+    #up{
+      width: 0;
+      height: 0;
+      border-bottom: 97px solid white;
+      border-right: 97px solid transparent;
+      position: absolute;
+      top: 1.5px;
+      left: 1px;
+    }
+    /* 带边框: 要生成有边框的三角形，可以采用两个三角形通过定位重叠到一起实现 */
+
+
+    #triangle-topleft {
+      width: 0;
+      height: 0;
+      border-top: 100px solid red;
+      border-right: 100px solid transparent;
+    }
+
+    #triangle-topright {
+      width: 0;
+      height: 0;
+      border-top: 100px solid red;
+      border-left: 100px solid transparent;
+    }
+
+    #triangle-bottomright {
+      width: 0;
+      height: 0;
+      border-top: 100px solid transparent;
+      border-right: 100px solid red;
+    }
+
+    #triangle-top {
+      width: 0;
+      height: 0;
+      border-top: 50px solid red;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+    }
+
+    #triangle-bottom {
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid red;
+    }
+
+    #triangle-left {
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-left: 50px solid red;
+      border-right: 50px solid transparent;
+      border-bottom: 50px solid transparent;
+    }
+
+    #triangle-right {
+      width: 0;
+      height: 0;
+      border-top: 50px solid transparent;
+      border-left: 50px solid transparent;
+      border-right: 50px solid red;
+      border-bottom: 50px solid transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="triangle-box">
+
+    <div id="triangle-topleft" class="triangle"></div>
+    <div id="triangle-topright" class="triangle"></div>
+    <div id="triangle-bottomleft" class="triangle"></div>
+    <div id="triangle-bottomright" class="triangle"></div>
+
+    <!-- 带边框的三角形 要生成有边框的三角形，可以采用两个三角形通过定位重叠到一起实现 -->
+    <div class="box" class="triangle">
+      <div id="triangle-bottomleft"></div>
+      <div id="up"></div>
+    </div>
+    <!-- 带边框的三角形 要生成有边框的三角形，可以采用两个三角形通过定位重叠到一起实现 -->
+  </div>
+
+  <div class="triangle-box" style="margin-top: 30px;">
+    <div id="triangle-top" class="triangle"></div>
+    <div id="triangle-right" class="triangle"></div>
+    <div id="triangle-bottom" class="triangle"></div>
+    <div id="triangle-left" class="triangle"></div>
+
+  </div>
+
+
+</body>
+
+</html>
