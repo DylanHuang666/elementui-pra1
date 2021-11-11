@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jsmind</title>
+  <link type="text/css" rel="stylesheet" href="./css/jsmind.css" />
+  <script type="text/javascript" src="./js/jsmind.js"></script>
+  <style>
+    #jsmind_container {
+      /* width: 800px; */
+      height: 500px;
+      border: solid 1 px #ccc;
+      background: #f4f4f4;
+    }
+    .aaa{
+      box-sizing: border-box;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      /* border-radius: 50%; */
+      text-align: center;
+      /* background: red; */
+      padding: 22px 0;
+    }
+    .aaa span{
+      /* word-wrap: break-word; */
+    }
+    jmnodes jmnode[nodeid="open2"]{
+      width: 100px;
+      height: 100px;
+      padding: 0;
+      border-radius: 50%;
+      /* text-align: center; */
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="jsmind_container"></div>
+  <script>
+    // var mind = {
+    //   // 3 data format supported ...
+    //   // see Documents for more information
+    // };
+    var mind = {
+      /* 元数据，定义思维导图的名称、作者、版本等信息 */
+      "meta": {
+        "name": "jsMind-demo-tree",
+        "author": "dylan",
+        "version": "0.1"
+      },
+      /* 数据格式声明 */
+      "format": "node_tree",
+      /* 数据内容 */
+      "data": {
+        "id": "root",
+        "topic": "jsMind",
+        "children": [{
+            "id": "easy",
+            "topic": "Easy", //内容
+            "direction": "left", //位置
+            "expanded": false, //是否展开
+            "children": [{
+                "id": "easy1",
+                "topic": "Easy to show"
+              },
+              {
+                "id": "easy2",
+                "topic": "Easy to edit"
+              },
+              {
+                "id": "easy3",
+                "topic": "Easy to store"
+              },
+              {
+                "id": "easy4",
+                "topic": "Easy to embed"
+              }
+            ]
+          },
+          {
+            "id": "open",
+            "topic": "Open Source",
+            "direction": "right",
+            "expanded": true,
+            "children": [{
+                "id": "open1",
+                "topic": "<input />"
+              },
+              {
+                "id": "open2",
+                "topic": "<div class='aaa'><span>哈个美</span><span>哈个美据</span></div>"
+              }
+            ]
+          },
+          {
+            "id": "powerful",
+            "topic": "Powerful",
+            "direction": "right",
+            "children": [{
+                "id": "powerful1",
+                "topic": "Base on Javascript"
+              },
+              {
+                "id": "powerful2",
+                "topic": "Base on HTML5"
+              },
+              {
+                "id": "powerful3",
+                "topic": "Depends on you"
+              }
+            ]
+          },
+          {
+            "id": "other",
+            "topic": "test node",
+            "direction": "left",
+            "children": [{
+                "id": "other1",
+                "topic": "I'm from local variable"
+              },
+              {
+                "id": "other2",
+                "topic": "I can do everything"
+              }
+            ]
+          }
+        ]
+      }
+    };
+
+    var options = {
+      container: 'jsmind_container',
+      editable: true,
+      theme: 'orange'
+    };
+    var jm = new jsMind(options);
+    jm.show(mind);
+
+    setTimeout(()=>{
+      let rootnode = jm.get_root() //根节点
+      let powerfulnode = jm.get_node('powerful') //通过id获取节点
+      console.log('jm.get_root()',jm.get_root())
+      jm.select_node(powerfulnode) //选中
+      jm.collapse_node(powerfulnode) //收起子节点
+      jm.move_node('open2','open1') //移动节点
+      // jm.begin_edit('open2') //将该节点调整为编辑状态
+      
+    },3000)
+ 
+  </script>
+</body>
+
+</html>
