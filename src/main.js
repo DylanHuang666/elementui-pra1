@@ -42,6 +42,10 @@ Vue.prototype.$message = TMessage;
 //svg
 import '@/icons'
 
+//v-calendar
+import VCalendar from 'v-calendar';
+Vue.use(VCalendar);
+
 Vue.config.productionTip = false
 
 new Vue({

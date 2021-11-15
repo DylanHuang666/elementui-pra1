@@ -168,9 +168,19 @@ const routes = [{
     component: () => import('../views/layout-demo/index.vue')
   },
   {
-    path: '/vue-demo', //布局
+    path: '/vue-demo',
     name: 'vueDemo',
     component: () => import('../views/vue-demo/index.vue')
+  },
+  {
+    path: '/v-calendar', //v-calendar
+    name: 'vCalendar',
+    component: () => import('../views/vue-plugin/v-calendar/index.vue')
+  },
+  {
+    path: '/sass-demo', //sass
+    name: 'sass-demo',
+    component: () => import('../views/sass-demo/sass1.vue')
   }
   
 ]

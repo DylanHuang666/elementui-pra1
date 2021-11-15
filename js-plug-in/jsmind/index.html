@@ -33,11 +33,20 @@
     jmnodes jmnode[nodeid="open2"]{
       width: 100px;
       height: 100px;
-      padding: 0;
+      box-sizing: border-box;
+      padding: 0 10px;
       border-radius: 50%;
       /* text-align: center; */
       background: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+    /* jmnode{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
   </style>
 </head>
 
@@ -91,7 +100,7 @@
             "expanded": true,
             "children": [{
                 "id": "open1",
-                "topic": "<input />"
+                "topic": "<input id='ipt1' a='556' />"
               },
               {
                 "id": "open2",
@@ -153,6 +162,16 @@
       // jm.begin_edit('open2') //将该节点调整为编辑状态
       
     },3000)
+
+    let el = document.querySelector('#ipt1')
+    let el2 = document.querySelector("jmnode[nodeid='open2']")
+    el2.onclick = function(){
+      console.log('点击')
+    }
+    console.log('el',[el],el2)
+    setTimeout(()=>{
+      console.log('el2',[el])
+    },6000)
  
   </script>
 </body>
