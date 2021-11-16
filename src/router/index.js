@@ -181,6 +181,11 @@ const routes = [{
     path: '/sass-demo', //sass
     name: 'sass-demo',
     component: () => import('../views/sass-demo/sass1.vue')
+  },
+  {
+    path: '/my-components', //sass
+    name: 'my-components',
+    component: () => import('../views/my-components/collapse/index.vue')
   }
   
 ]
