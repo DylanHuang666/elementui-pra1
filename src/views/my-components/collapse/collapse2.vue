@@ -1,16 +1,16 @@
 <template>
   <div class="menu">
-    <div class="menu-item" key="a">
+    <div class="menu-item">
       <h3 @click="clicktitleHandle(1)">标题1</h3>
       <div :class="isShow1 ? 'a' : ''" ref="div1">内容1111111哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
     </div>
-    <div class="menu-item" key="b">
+    <div class="menu-item">
       <h3 @click="clicktitleHandle(2)">标题2</h3>
-      <div :class="isShow2 ? 'a' : ''" ref="div2">内容222222</div>
+      <div :class="isShow2 ? 'a' : ''" ref="div2">内容222222哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
     </div>
-    <div class="menu-item" key="c">
+    <div class="menu-item">
       <h3 @click="clicktitleHandle(3)">标题3</h3>
-      <div :class="isShow3 ? 'a' : ''" ref="div3">内容333333</div>
+      <div :class="isShow3 ? 'a' : ''" ref="div3">内容333333哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
       this.isClick = n
       this[`isShow${n}`] = !this[`isShow${n}`];
       const el = this.$refs[`div${n}`];
-      // console.log("el", this.$refs, el);
+      console.log("el", this.$refs, el);
       var height = el.offsetHeight;
       if (this[`isShow${n}`]) {
         el.style.transition = "none";
