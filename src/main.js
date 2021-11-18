@@ -46,6 +46,8 @@ import '@/icons'
 import VCalendar from 'v-calendar';
 Vue.use(VCalendar);
 
+Vue.prototype.$bus = new Vue();
+
 Vue.config.productionTip = false
 
 new Vue({

@@ -183,9 +183,14 @@ const routes = [{
     component: () => import('../views/sass-demo/sass1.vue')
   },
   {
-    path: '/my-components', //sass
+    path: '/my-components',
     name: 'my-components',
     component: () => import('../views/my-components/collapse/index.vue')
+  },
+  {
+    path: '/manage-system-layout',
+    name: 'manage-system-layout',
+    component: () => import('../views/manage-system-layout/index.vue')
   }
   
 ]
