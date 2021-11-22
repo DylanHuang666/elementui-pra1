@@ -2,7 +2,7 @@
   <div>
     <el-menu
       :router="true"
-      default-active="1-1"
+      :default-active="defaultActive"
       class="el-menu-vertical-demo"
       :collapse="isCollapse"
       @open="handleOpen"
@@ -28,7 +28,7 @@
           <el-menu-item index="2-3-1">个人主页</el-menu-item>
         </el-submenu>
       </el-submenu>
-      <el-menu-item index="3">
+      <el-menu-item index="/manage-system-layout">
         <i class="el-icon-house"></i>
         <span slot="title">首页</span>
       </el-menu-item>
@@ -40,11 +40,22 @@
 export default {
   data() {
     return {
-      isCollapse: false
+      isCollapse: false,
+      defaultActive: '/manage-system-layout'
     };
   },
   created() {
     this.$bus.$on("changeCollapse", this.changeCollapseFn);
+  },
+  watch: {
+    $route: {
+      handler(newRoute) {
+        // console.log("newRoute", newRoute);
+        // this.routePathArr = newRoute.matched;
+        this.defaultActive = newRoute.path
+      },
+      immediate: true
+    }
   },
   methods: {
     changeCollapseFn(v) {
