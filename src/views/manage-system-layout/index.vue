@@ -31,9 +31,9 @@
 </template>
 
 <script>
-import sideMenu from './sideMenu'
-import headerBar from './headerBar'
-import mainArea from './mainArea'
+import sideMenu from './layout/sideMenu'
+import headerBar from './layout/headerBar'
+import mainArea from './layout/mainArea'
 
 export default {
   components:{
@@ -47,20 +47,20 @@ export default {
 <style lang="scss" scoped>
 .el-header {
   // background-color: #b3c0d1;
-  color: #333;
+  // color: #333;
   box-shadow: 0px 1px 5px 1px #cccccc;
 }
 
 .el-aside {
   // background-color: #d3dce6;
-  color: #333;
+  // color: #333;
   height: 100vh;
   overflow-x: hidden;
 }
 
 .el-main {
   // background-color: #e9eef3;
-  color: #333;
+  // color: #333;
   height: calc(100vh - 60px);
 }
 

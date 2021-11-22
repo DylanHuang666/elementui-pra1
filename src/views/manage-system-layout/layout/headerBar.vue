@@ -1,10 +1,21 @@
 <template>
   <div class="header-bar">
     <i :class="isCollapse ? 'el-icon-s-unfold' : 'el-icon-s-fold'" @click="clickCollapseHandle"></i>
-    <div class="user-box">
+    <!-- <div class="user-box">
       <img src="@/assets/images/user.png" alt />
       <span>Dylan</span>
-    </div>
+    </div>-->
+
+    <el-dropdown>
+      <div class="user-box">
+        <img src="@/assets/images/user.png" alt />
+        <span>Dylan</span>
+      </div>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item>个人主页</el-dropdown-item>
+        <el-dropdown-item>退出登录</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
   </div>
 </template>
 
@@ -17,8 +28,8 @@ export default {
   },
   methods: {
     clickCollapseHandle() {
-      this.isCollapse = !this.isCollapse
-      this.$bus.$emit('changeCollapse',this.isCollapse)
+      this.isCollapse = !this.isCollapse;
+      this.$bus.$emit("changeCollapse", this.isCollapse);
     }
   }
 };
@@ -30,6 +41,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-right: 20px;
   i {
     font-size: 24px;
     cursor: pointer;

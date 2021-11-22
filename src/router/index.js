@@ -190,9 +190,34 @@ const routes = [{
   {
     path: '/manage-system-layout',
     name: 'manage-system-layout',
-    component: () => import('../views/manage-system-layout/index.vue')
+    component: () => import('../views/manage-system-layout/index.vue'),
+    meta: {
+      title: '首页',
+      // icon: 'config',
+      // keepAlive: true
+    },
+    children: [{
+      path: 'table',
+      name: 'manage-system-table',
+      component: () => import('../views/manage-system-layout/pages/table.vue'),
+      meta: {
+				title: '表格',
+				// icon: 'config',
+				// keepAlive: true
+			}
+    },{
+      path: 'carousel',
+      name: 'manage-system-carousel',
+      component: () => import('../views/manage-system-layout/pages/carousel.vue'),
+      meta: {
+				title: '轮播图',
+				// icon: 'config',
+				// keepAlive: true
+			}
+    }]
+
   }
-  
+
 ]
 
 const router = new VueRouter({
