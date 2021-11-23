@@ -12,6 +12,7 @@
     "element-ui": "^2.15.6",
     "gsap": "^3.8.0",
     "moment": "^2.29.1",
+    "nprogress": "^0.2.0",
     "spritespin": "^4.1.0",
     "v-calendar": "^2.3.4",
     "velocity-animate": "^1.5.2",

@@ -46,6 +46,9 @@ import '@/icons'
 import VCalendar from 'v-calendar';
 Vue.use(VCalendar);
 
+//nprogress
+import 'nprogress/nprogress.css'
+
 Vue.prototype.$bus = new Vue();
 
 Vue.config.productionTip = false
