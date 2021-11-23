@@ -190,6 +190,11 @@ const routes = [{
     component: () => import('../views/my-components/collapse/index.vue')
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/manage-system-layout/pages/login.vue')
+  },
+  {
     path: '/manage-system-layout',
     name: 'manage-system-layout',
     component: () => import('../views/manage-system-layout/index.vue'),
