@@ -1,7 +1,11 @@
 <template>
   <div class="main-container">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item v-for="(item,index) in routePathArr" :key="index" :to="{ path: item.path }">{{item.meta.title}}</el-breadcrumb-item>
+      <el-breadcrumb-item v-for="(item,index) in routePathArr" :key="index" :to="item.meta.noJump ? {} : { path: item.path }">{{item.meta.title}}</el-breadcrumb-item>
+      <!-- <div v-for="(item,index) in routePathArr" :key="index">
+        <el-breadcrumb-item v-if="item.meta.noJump">{{item.meta.title}}</el-breadcrumb-item>
+        <el-breadcrumb-item v-else :to="{ path: item.path }">{{item.meta.title}}</el-breadcrumb-item>
+      </div> -->
       <!-- <el-breadcrumb-item>
         <a href="/">活动管理</a>
       </el-breadcrumb-item>

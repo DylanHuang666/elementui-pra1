@@ -3,20 +3,19 @@
     <div class="login-box">
       <el-form
         :model="ruleForm"
-        status-icon
         :rules="rules"
         ref="ruleForm"
         label-width="100px"
         class="demo-ruleForm"
       >
-        <el-form-item label="用户名" prop="userName">
+        <el-form-item label="用户名：" prop="userName">
           <el-input v-model="ruleForm.userName" autocomplete="off"></el-input>
         </el-form-item>
-        <el-form-item label="密码" prop="pass">
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
+        <el-form-item label="密码：" prop="pass">
+          <el-input type="password" v-model="ruleForm.pass" autocomplete="off" show-password></el-input>
         </el-form-item>
-        <el-form-item label="确认密码" prop="checkPass">
-          <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
+        <el-form-item label="确认密码：" prop="checkPass">
+          <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" show-password></el-input>
         </el-form-item>
         <!-- <el-form-item label="年龄" prop="age">
           <el-input v-model.number="ruleForm.age"></el-input>
@@ -36,6 +35,8 @@ export default {
     var checkUserName = (rule, value, callback) => {
       if (!value) {
         return callback(new Error("用户名不能为空"));
+      }else{
+        callback();
       }
       // setTimeout(() => {
       //   if (!Number.isInteger(value)) {
@@ -81,11 +82,23 @@ export default {
       }
     };
   },
+  created(){
+    console.log('this.$router',this.$router)
+  },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
+        console.log('valid',valid)
         if (valid) {
-          alert("submit!");
+          this.$router.push({
+            path: '/manage-system-layout',
+            // query: {
+            //   a:1
+            // }
+          })
+          // this.$router.push({
+          //   name: 'manage-system-layout'
+          // })
         } else {
           console.log("error submit!!");
           return false;
@@ -93,6 +106,7 @@ export default {
       });
     },
     resetForm(formName) {
+      //对该表单项进行重置，将其值重置为初始值并移除校验结果
       this.$refs[formName].resetFields();
     }
   }
@@ -105,12 +119,15 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: linear-gradient(to bottom,#125777, #13598f);
   &-box {
     // width: 300px;
     // height: 200px;
-    border: 1px solid #aaaaaa;
-    border-radius: 6px;
+    border-radius: 3px;
     margin-bottom: 100px;
+    box-shadow: 0px 0px 3px 2px #dddddd;
+    padding: 10px;
+    background: white;
   }
 }
 </style>

@@ -21,11 +21,11 @@
           <i class="el-icon-menu"></i>
           <span slot="title">管理</span>
         </template>
-        <el-menu-item index="2-1">echarts看板</el-menu-item>
-        <el-menu-item index="2-2">个人简历</el-menu-item>
+        <el-menu-item index="/manage-system-layout/canvasBoard">echarts看板</el-menu-item>
+        <el-menu-item index="/manage-system-layout/resume">个人简历</el-menu-item>
         <el-submenu index="2-3">
           <span slot="title">用户管理</span>
-          <el-menu-item index="2-3-1">个人主页</el-menu-item>
+          <el-menu-item index="/manage-system-layout/userManage/personal">个人主页</el-menu-item>
         </el-submenu>
       </el-submenu>
       <el-menu-item index="/manage-system-layout">

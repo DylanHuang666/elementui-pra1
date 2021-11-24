@@ -204,24 +204,69 @@ const routes = [{
       // keepAlive: true
     },
     children: [{
-      path: 'table',
-      name: 'manage-system-table',
-      component: () => import('../views/manage-system-layout/pages/table.vue'),
-      meta: {
-				title: '表格',
-				// icon: 'config',
-				// keepAlive: true
-			}
-    },{
-      path: 'carousel',
-      name: 'manage-system-carousel',
-      component: () => import('../views/manage-system-layout/pages/carousel.vue'),
-      meta: {
-				title: '轮播图',
-				// icon: 'config',
-				// keepAlive: true
-			}
-    }]
+        path: 'table',
+        name: 'manage-system-table',
+        component: () => import('../views/manage-system-layout/pages/table.vue'),
+        meta: {
+          title: '表格',
+          // icon: 'config',
+          // keepAlive: true
+        }
+      }, {
+        path: 'carousel',
+        name: 'manage-system-carousel',
+        component: () => import('../views/manage-system-layout/pages/carousel.vue'),
+        meta: {
+          title: '轮播图',
+          // icon: 'config',
+          // keepAlive: true
+        }
+      },
+      {
+        path: 'canvasBoard',
+        name: 'canvasBoard',
+        component: () => import('../views/manage-system-layout/pages/canvasBoard.vue'),
+        meta: {
+          title: 'canvas看板',
+          // icon: 'config',
+          // keepAlive: true
+        }
+      },
+      {
+        path: 'resume',
+        name: 'resume',
+        component: () => import('../views/manage-system-layout/pages/resume.vue'),
+        meta: {
+          title: '个人简历',
+          // icon: 'config',
+          // keepAlive: true
+        }
+      },
+      {
+        path: 'userManage',
+        name: 'userManage',
+        component: () => import('../views/manage-system-layout/pages/userManage/userManage.vue'),
+        meta: {
+          title: '用户管理',
+          noJump: true
+          // icon: 'config',
+          // keepAlive: true
+        },
+        // redirect:{
+        //   path: ''
+        // },
+        children: [{
+          path: 'personal',
+          name: 'personal',
+          component: () => import('../views/manage-system-layout/pages/userManage/personal.vue'),
+          meta: {
+            title: '个人主页',
+            // icon: 'config',
+            // keepAlive: true
+          },
+        }]
+      }
+    ]
 
   }
 
@@ -231,12 +276,12 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to,from,next)=>{
+router.beforeEach((to, from, next) => {
   NProgress.start()
   next()
 })
 
-router.afterEach((to,from)=>{
+router.afterEach((to, from) => {
   NProgress.done()
 })
 
