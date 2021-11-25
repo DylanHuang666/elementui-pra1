@@ -50,7 +50,7 @@ export default {
           this.loading = false;
         }, 1000);
       },
-      immediate: trueS
+      immediate: true
     }
   },
   data() {

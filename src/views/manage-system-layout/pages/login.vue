@@ -134,13 +134,13 @@ export default {
     border-radius: 3px;
     // margin-bottom: 100px;
     box-shadow: 0px 0px 2px 2px #dddddd;
-    padding: 20px;
+    padding: 20px 36px 20px;
     background: white;
     .title{
       // text-align: center;
       font-size: 18px;
       margin-left: 2px;
-      margin-bottom: 10px;
+      margin-bottom: 18px;
     }
     /deep/.el-form-item__content{
       margin-left: 0 !important;
@@ -151,6 +151,7 @@ export default {
     .btn-box{
       display: flex;
       justify-content: center;
+      padding-top: 10px;
     }
   }
 }
