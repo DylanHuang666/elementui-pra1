@@ -43,11 +43,14 @@ export default {
     mainArea
   },
   watch: {
-    $route() {
-      this.loading = true;
-      setTimeout(() => {
-        this.loading = false;
-      }, 1000);
+    $route: {
+      handler() {
+        this.loading = true;
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
+      },
+      immediate: trueS
     }
   },
   data() {
