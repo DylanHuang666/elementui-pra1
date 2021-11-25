@@ -6,6 +6,18 @@ import NProgress from 'nprogress'
 
 Vue.use(VueRouter)
 
+/*
+路由重复指定会有红色报错。虽然对项目无影响，但是看到有红的不舒服！
+解决方法：
+*/
+//获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  // console.log('this',this) //
+  return originalPush.call(this, location).catch(err => err)
+}
+
 const routes = [{
     path: '/',
     name: 'Table',
@@ -199,75 +211,116 @@ const routes = [{
     name: 'manage-system-layout',
     component: () => import('../views/manage-system-layout/index.vue'),
     meta: {
-      title: '首页',
+      title: '首页', //为了面包屑第一级显示也取首页
       // icon: 'config',
       // keepAlive: true
     },
+    redirect:"/manage-system-layout/home",
     children: [{
-        path: 'table',
-        name: 'manage-system-table',
-        component: () => import('../views/manage-system-layout/pages/table.vue'),
+        path: 'home',
+        name: 'home',
+        component: () => import('../views/manage-system-layout/pages/home.vue'),
         meta: {
-          title: '表格',
-          // icon: 'config',
-          // keepAlive: true
-        }
-      }, {
-        path: 'carousel',
-        name: 'manage-system-carousel',
-        component: () => import('../views/manage-system-layout/pages/carousel.vue'),
-        meta: {
-          title: '轮播图',
+          title: '首页',
           // icon: 'config',
           // keepAlive: true
         }
       },
       {
-        path: 'canvasBoard',
-        name: 'canvasBoard',
-        component: () => import('../views/manage-system-layout/pages/canvasBoard.vue'),
+        path: 'elementui',
+        name: 'elementui',
+        component: () => import('../views/manage-system-layout/pages/elementui/elementui.vue'),
         meta: {
-          title: 'canvas看板',
-          // icon: 'config',
-          // keepAlive: true
-        }
-      },
-      {
-        path: 'resume',
-        name: 'resume',
-        component: () => import('../views/manage-system-layout/pages/resume.vue'),
-        meta: {
-          title: '个人简历',
-          // icon: 'config',
-          // keepAlive: true
-        }
-      },
-      {
-        path: 'userManage',
-        name: 'userManage',
-        component: () => import('../views/manage-system-layout/pages/userManage/userManage.vue'),
-        meta: {
-          title: '用户管理',
+          title: 'elementui',
           noJump: true
           // icon: 'config',
           // keepAlive: true
         },
-        // redirect:{
-        //   path: ''
-        // },
         children: [{
-          path: 'personal',
-          name: 'personal',
-          component: () => import('../views/manage-system-layout/pages/userManage/personal.vue'),
-          meta: {
-            title: '个人主页',
-            // icon: 'config',
-            // keepAlive: true
+            path: 'table',
+            name: 'manage-system-table',
+            component: () => import('../views/manage-system-layout/pages/elementui/table.vue'),
+            meta: {
+              title: '表格',
+              // icon: 'config',
+              // keepAlive: true
+            }
+          }, {
+            path: 'carousel',
+            name: 'manage-system-carousel',
+            component: () => import('../views/manage-system-layout/pages/elementui/carousel.vue'),
+            meta: {
+              title: '轮播图',
+              // icon: 'config',
+              // keepAlive: true
+            }
+          },          
+        ]
+      },
+      {
+        path: 'manage',
+        name: 'manage',
+        component: () => import('../views/manage-system-layout/pages/manage/manage.vue'),
+        meta: {
+          title: '管理',
+          noJump: true
+          // icon: 'config',
+          // keepAlive: true
+        },
+        children: [
+          {
+            path: 'canvasBoard',
+            name: 'canvasBoard',
+            component: () => import('../views/manage-system-layout/pages/manage/canvasBoard.vue'),
+            meta: {
+              title: 'canvas看板',
+              // icon: 'config',
+              // keepAlive: true
+            }
           },
-        }]
-      }
+          {
+            path: 'resume',
+            name: 'resume',
+            component: () => import('../views/manage-system-layout/pages/manage/resume.vue'),
+            meta: {
+              title: '个人简历',
+              // icon: 'config',
+              // keepAlive: true
+            }
+          },
+          {
+            path: 'userManage',
+            name: 'userManage',
+            component: () => import('../views/manage-system-layout/pages/manage/userManage/userManage.vue'),
+            meta: {
+              title: '用户管理',
+              noJump: true
+              // icon: 'config',
+              // keepAlive: true
+            },
+            // redirect:{
+            //   path: ''
+            // },
+            children: [{
+              path: 'personal',
+              name: 'personal',
+              component: () => import('../views/manage-system-layout/pages/manage/userManage/personal.vue'),
+              meta: {
+                title: '个人主页',
+                // icon: 'config',
+                // keepAlive: true
+              },
+            }]
+          }
+        ]
+      },
     ]
 
+  },
+  {
+    path: '*',
+    name: 'notFound',
+    component: () => import('../views/manage-system-layout/pages/notFound.vue')
   }
 
 ]
@@ -275,6 +328,7 @@ const routes = [{
 const router = new VueRouter({
   routes
 })
+
 
 router.beforeEach((to, from, next) => {
   NProgress.start()

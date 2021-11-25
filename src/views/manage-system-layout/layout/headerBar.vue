@@ -6,14 +6,14 @@
       <span>Dylan</span>
     </div>-->
 
-    <el-dropdown>
+    <el-dropdown @command="handleCommand">
       <div class="user-box">
         <img src="@/assets/images/user.png" alt />
         <span>Dylan</span>
       </div>
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item>个人主页</el-dropdown-item>
-        <el-dropdown-item>退出登录</el-dropdown-item>
+        <el-dropdown-item command="a">个人主页</el-dropdown-item>
+        <el-dropdown-item command="b">退出登录</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
   </div>
@@ -30,6 +30,14 @@ export default {
     clickCollapseHandle() {
       this.isCollapse = !this.isCollapse;
       this.$bus.$emit("changeCollapse", this.isCollapse);
+    },
+    handleCommand(command) {
+      // console.log('command',command)
+      if(command == 'a'){
+        this.$router.push('/manage-system-layout/manage/userManage/personal')
+      }else{
+        this.$router.push('/login')
+      }
     }
   }
 };

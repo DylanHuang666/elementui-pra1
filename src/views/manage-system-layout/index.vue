@@ -1,8 +1,7 @@
 <template>
   <el-container>
-
     <!-- 侧边栏 -->
-    <!-- el-aside如果不设置width，会有固定默认width为300px -->   
+    <!-- el-aside如果不设置width，会有固定默认width为300px -->
     <el-aside style="width:auto;">
       <sideMenu />
     </el-aside>
@@ -10,36 +9,51 @@
 
     <!-- 右侧区域 -->
     <el-container>
-
       <!-- 头部 -->
-      <!-- el-header如果不设置height，会有固定默认height为60px -->      
+      <!-- el-header如果不设置height，会有固定默认height为60px -->
       <el-header style="height:auto;">
         <headerBar />
       </el-header>
       <!-- 头部 -->
 
       <!-- 主区域 -->
-      <el-main>
+      <el-main
+        v-loading="loading"
+        element-loading-text="拼命加载中..."
+        element-loading-spinner="el-icon-loading"
+        element-loading-background="rgba(0, 0, 0, 0)"
+      >
         <mainArea />
       </el-main>
       <!-- 主区域 -->
-
     </el-container>
     <!-- 右侧区域 -->
-
   </el-container>
 </template>
 
 <script>
-import sideMenu from './layout/sideMenu'
-import headerBar from './layout/headerBar'
-import mainArea from './layout/mainArea'
+import sideMenu from "./layout/sideMenu";
+import headerBar from "./layout/headerBar";
+import mainArea from "./layout/mainArea";
 
 export default {
-  components:{
+  components: {
     sideMenu,
     headerBar,
     mainArea
+  },
+  watch: {
+    $route() {
+      this.loading = true;
+      setTimeout(() => {
+        this.loading = false;
+      }, 1000);
+    }
+  },
+  data() {
+    return {
+      loading: true
+    };
   }
 };
 </script>
@@ -63,5 +77,4 @@ export default {
   // color: #333;
   height: calc(100vh - 60px);
 }
-
 </style>

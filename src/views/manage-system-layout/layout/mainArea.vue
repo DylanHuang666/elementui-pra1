@@ -1,23 +1,28 @@
 <template>
   <div class="main-container">
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item v-for="(item,index) in routePathArr" :key="index" :to="item.meta.noJump ? {} : { path: item.path }">{{item.meta.title}}</el-breadcrumb-item>
-      <!-- <div v-for="(item,index) in routePathArr" :key="index">
-        <el-breadcrumb-item v-if="item.meta.noJump">{{item.meta.title}}</el-breadcrumb-item>
-        <el-breadcrumb-item v-else :to="{ path: item.path }">{{item.meta.title}}</el-breadcrumb-item>
-      </div> -->
-      <!-- <el-breadcrumb-item>
-        <a href="/">活动管理</a>
-      </el-breadcrumb-item>
-      <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-      -->
-    </el-breadcrumb>
+    <!-- <el-breadcrumb separator="/">
+      <template v-if="$route.meta.title == '首页'">
+        <el-breadcrumb-item>首页</el-breadcrumb-item>
+      </template>
+
+      <template v-else>
+        <el-breadcrumb-item v-for="(item,index) in $route.matched" :key="index">
+          <span v-if="item.meta.noJump">{{item.meta.title}}</span>
+          <router-link v-else :to="item.path">{{item.meta.title}}</router-link>
+        </el-breadcrumb-item>
+      </template>
+    </el-breadcrumb> -->
+    <pagebreadcrumb />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
+import pagebreadcrumb from '../components/pagebreadcrumb'
 export default {
+  components:{
+    pagebreadcrumb
+  },
   data() {
     return {
       routePathArr: []
@@ -33,22 +38,15 @@ export default {
     }
   },
   created() {
-    console.log("this.$route", this.$route);
+    // console.log("this.$route", this.$route);
   }
-  // methods:{
-  //   routePath(val){
-  //     val.matched.map((item,index)=>{
-
-  //     })
-  //   }
-  // }
 };
 </script>
 
 <style lang="scss" scoped>
 // .main-container {
 // }
-.el-breadcrumb {
-  margin: 10px 0 20px;
-}
+// .el-breadcrumb {
+//   margin: 10px 0 20px;
+// }
 </style>
