@@ -37,7 +37,7 @@ Vue.prototype.$gsap = gsap
 
 //自己实现的message提示弹框
 import TMessage from '@/components/TMessage/TMessage.js';
-Vue.prototype.$message = TMessage;
+Vue.prototype.$tmessage = TMessage;
 
 //svg
 import '@/icons'

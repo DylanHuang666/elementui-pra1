@@ -10,22 +10,40 @@
         class="demo-ruleForm"
         label-position="right"
       >
-        <el-form-item label="" prop="userName">
+        <el-form-item label prop="userName">
           <!-- <i class="el-icon-user"></i> -->
           <el-input v-model="ruleForm.userName" autocomplete="off" placeholder="用户名">
-            <template slot="prepend"><i class="el-icon-user"></i></template>
+            <template slot="prepend">
+              <i class="el-icon-user"></i>
+            </template>
           </el-input>
         </el-form-item>
-        <el-form-item label="" prop="pass">
+        <el-form-item label prop="pass">
           <!-- <i class="el-icon-lock"></i> -->
-          <el-input type="password" v-model="ruleForm.pass" autocomplete="off" show-password placeholder="密码">
-            <template slot="prepend"><i class="el-icon-lock"></i></template>
+          <el-input
+            type="password"
+            v-model="ruleForm.pass"
+            autocomplete="off"
+            show-password
+            placeholder="密码"
+          >
+            <template slot="prepend">
+              <i class="el-icon-lock"></i>
+            </template>
           </el-input>
         </el-form-item>
-        <el-form-item label="" prop="checkPass">
+        <el-form-item label prop="checkPass">
           <!-- <i class="el-icon-lock"></i> -->
-          <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off" show-password placeholder="确认密码">
-            <template slot="prepend"><i class="el-icon-key"></i></template>
+          <el-input
+            type="password"
+            v-model="ruleForm.checkPass"
+            autocomplete="off"
+            show-password
+            placeholder="确认密码"
+          >
+            <template slot="prepend">
+              <i class="el-icon-key"></i>
+            </template>
           </el-input>
         </el-form-item>
         <div class="btn-box">
@@ -43,7 +61,7 @@ export default {
     var checkUserName = (rule, value, callback) => {
       if (!value) {
         return callback(new Error("用户名不能为空"));
-      }else{
+      } else {
         callback();
       }
       // setTimeout(() => {
@@ -90,20 +108,26 @@ export default {
       }
     };
   },
-  created(){
-    console.log('this.$router',this.$router)
+  created() {
+    console.log("this.$router", this.$router);
   },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate(valid => {
-        console.log('valid',valid)
+        console.log("valid", valid);
         if (valid) {
+          this.$message({
+            message: "登录成功",
+            type: "success",
+            center: true,
+            showClose:true
+          });
           this.$router.push({
-            path: '/manage-system-layout',
+            path: "/manage-system-layout"
             // query: {
             //   a:1
             // }
-          })
+          });
           // this.$router.push({
           //   name: 'manage-system-layout'
           // })
@@ -127,7 +151,7 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom,#125777, #13598f);
+  background: linear-gradient(to bottom, #125777, #13598f);
   &-box {
     width: 320px;
     // height: 200px;
@@ -136,19 +160,19 @@ export default {
     box-shadow: 0px 0px 2px 2px #dddddd;
     padding: 20px 36px 20px;
     background: white;
-    .title{
+    .title {
       // text-align: center;
       font-size: 18px;
       margin-left: 2px;
       margin-bottom: 18px;
     }
-    /deep/.el-form-item__content{
+    /deep/.el-form-item__content {
       margin-left: 0 !important;
     }
-    /deep/.el-form-item__error{
+    /deep/.el-form-item__error {
       left: 55px;
     }
-    .btn-box{
+    .btn-box {
       display: flex;
       justify-content: center;
       padding-top: 10px;
