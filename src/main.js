@@ -49,6 +49,9 @@ Vue.use(VCalendar);
 //nprogress
 import 'nprogress/nprogress.css'
 
+//mock.js
+import '@/mock/index.js'
+
 Vue.prototype.$bus = new Vue();
 
 Vue.config.productionTip = false

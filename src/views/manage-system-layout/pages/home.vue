@@ -1,9 +1,15 @@
 <template>
-  <div>home</div>
+  <div>
+    <clock />
+  </div>
 </template>
 
 <script>
+import clock from '../components/clock'
 export default {
+  components:{
+    clock
+  }
 };
 </script>
 
