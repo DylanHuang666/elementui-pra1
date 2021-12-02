@@ -11,16 +11,16 @@
           <router-link v-else :to="item.path">{{item.meta.title}}</router-link>
         </el-breadcrumb-item>
       </template>
-    </el-breadcrumb> -->
+    </el-breadcrumb>-->
     <pagebreadcrumb />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import pagebreadcrumb from '../components/pagebreadcrumb'
+import pagebreadcrumb from "../components/pagebreadcrumb";
 export default {
-  components:{
+  components: {
     pagebreadcrumb
   },
   data() {

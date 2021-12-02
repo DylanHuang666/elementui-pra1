@@ -18,12 +18,15 @@
 
       <!-- 主区域 -->
       <el-main
+        class="s-main-box"
         v-loading="loading"
         element-loading-text="拼命加载中..."
         element-loading-spinner="el-icon-loading"
         element-loading-background="rgba(0, 0, 0, 0)"
       >
         <mainArea />
+        <el-backtop target=".s-main-box">
+        </el-backtop>
       </el-main>
       <!-- 主区域 -->
     </el-container>
@@ -79,5 +82,14 @@ export default {
   // background-color: #e9eef3;
   // color: #333;
   height: calc(100vh - 60px);
+}
+
+.backTop {
+  background-color: #f2f5f6;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  // line-height: 40px;
+  color: #1989fa;
+  font-size: 16px;
 }
 </style>
