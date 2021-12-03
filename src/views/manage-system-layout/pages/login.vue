@@ -124,9 +124,9 @@ export default {
         checkCode: ""
       },
       rules: {
-        userName: [{ validator: checkUserName, trigger: "blur" }],
-        pass: [{ validator: validatePass, trigger: "blur" }],
-        checkPass: [{ validator: validatePass2, trigger: "blur" }],
+        userName: [{ validator: checkUserName, trigger: "change" }],
+        pass: [{ validator: validatePass, trigger: "change" }],
+        checkPass: [{ validator: validatePass2, trigger: "change" }],
         checkCode: [{ validator: validateCode, trigger: "blur" }]
       },
       identifyCodes: "3456789ABCDEFGHGKMNPQRSTUVWXY",

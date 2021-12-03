@@ -15,6 +15,7 @@
         </template>
         <el-menu-item index="/manage-system-layout/elementui/table"><i class="el-icon-s-grid"></i>表格</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/carousel"><i class="el-icon-picture"></i>轮播图</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/rate"><i class="el-icon-star-on"></i>评分</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

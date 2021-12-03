@@ -254,7 +254,15 @@ const routes = [{
               // icon: 'config',
               // keepAlive: true
             }
-          },          
+          },
+          {
+            path: 'rate',
+            name: 'rate',
+            component: () => import('../views/manage-system-layout/pages/elementui/rate.vue'),
+            meta: {
+              title: '评分'
+            }
+          }       
         ]
       },
       {
