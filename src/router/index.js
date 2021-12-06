@@ -262,7 +262,23 @@ const routes = [{
             meta: {
               title: '评分'
             }
-          }       
+          },
+          {
+            path: 'card',
+            name: 'card',
+            component: () => import('../views/manage-system-layout/pages/elementui/card.vue'),
+            meta: {
+              title: '卡片'
+            }
+          },
+          {
+            path: 'calendar',
+            name: 'calendar',
+            component: () => import('../views/manage-system-layout/pages/elementui/calendar.vue'),
+            meta: {
+              title: '日历'
+            }
+          }     
         ]
       },
       {

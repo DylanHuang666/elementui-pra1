@@ -69,6 +69,7 @@ export default {
   // background-color: #b3c0d1;
   // color: #333;
   box-shadow: 0px 1px 5px 1px #cccccc;
+  z-index: 999;
 }
 
 .el-aside {
