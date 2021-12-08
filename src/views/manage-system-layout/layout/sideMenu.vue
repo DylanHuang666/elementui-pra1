@@ -18,6 +18,7 @@
         <el-menu-item index="/manage-system-layout/elementui/rate"><i class="el-icon-star-on"></i>评分</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/card"><i class="el-icon-postcard"></i>卡片</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/calendar"><i class="el-icon-date"></i>日历</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/infiniteScroll"><i class="el-icon-tickets"></i>无限滚动</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

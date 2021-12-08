@@ -278,7 +278,15 @@ const routes = [{
             meta: {
               title: '日历'
             }
-          }     
+          },
+          {
+            path: 'infiniteScroll',
+            name: 'infiniteScroll',
+            component: () => import('../views/manage-system-layout/pages/elementui/infiniteScroll.vue'),
+            meta: {
+              title: '无限滚动'
+            }
+          }   
         ]
       },
       {
