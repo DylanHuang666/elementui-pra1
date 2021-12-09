@@ -156,7 +156,7 @@
           </el-form-item>
 
           <el-form-item label prop="phoneCode" class="my-err-msg">
-            <el-input v-model="ruleForm3.phoneCode" autocomplete="off" placeholder="验证码">
+            <el-input v-model="ruleForm3.phoneCode" autocomplete="off" placeholder="手机短信验证码">
               <template slot="prepend">
                 <i class="el-icon-message"></i>
               </template>
@@ -236,8 +236,14 @@ export default {
       }
     };
     const validatePhone = (rule, value, callback) => {
+      //手机号码的校验
+      const phoneReg = /^[1][3,4,5,6,7,8,9][0-9]{9}$/;
+      let isPhone = phoneReg.test(value);
+
       if (value === "") {
         callback(new Error("请输入手机号码"));
+      } else if (!isPhone) {
+        callback(new Error("请输入正确手机号码"));
       } else {
         callback();
       }
@@ -420,12 +426,12 @@ export default {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.8s ease;
 }
 
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
-  position: absolute;
+  position: absolute; //if else显示隐藏动画加这个才会在同个位置发生动画，否则两个元素一起发生动画过程，会看到位置会移动过程
 }
 </style>
