@@ -54,6 +54,10 @@
             </div>
           </el-form-item>
 
+          <div style="margin-bottom: 10px;">
+            <el-checkbox v-model="isRememberPsw" @change="rememberChangeHandle">记住密码</el-checkbox>
+          </div>
+
           <div class="register-psw-btn-box">
             <el-button type="text" @click="toRegisterPage">去注册</el-button>
             <el-button type="text" @click="toForgetPswPage">忘记密码</el-button>
@@ -177,6 +181,8 @@
 
 <script>
 import identify from "../components/identify"; //图形验证码组件
+// 引入
+const Base64 = require("js-base64").Base64;
 export default {
   components: {
     identify
@@ -257,10 +263,11 @@ export default {
     };
     return {
       pageType: 1, //1登录 2注册 3忘记密码
+      isRememberPsw: false, //是否记住密码
       ruleForm: {
         //登录
         userName: "",
-        pass: "",
+        pass0: "",
         checkCode: ""
       },
       ruleForm2: {
@@ -291,6 +298,16 @@ export default {
   created() {
     // console.log("this.$router", this.$router);
     // this.refreshCode()
+    // 在页面加载时从cookie获取登录信息
+    let username = this.getCookie("username");
+    let password = Base64.decode(this.getCookie("password"));
+    console.log("password", password);
+    // 如果存在赋值给表单，并且将记住密码勾选
+    if (username) {
+      this.ruleForm.userName = username;
+      this.ruleForm.pass0 = password;
+      this.isRememberPsw = true;
+    }
   },
   mounted() {
     this.identifyCode = "";
@@ -317,6 +334,8 @@ export default {
             // this.$router.push({
             //   name: 'manage-system-layout'
             // })
+            // 储存登录信息
+            this.setUserInfo();
           } else if (formName == "ruleForm2") {
             this.$message({
               message: "注册成功",
@@ -368,6 +387,59 @@ export default {
     },
     toForgetPswPage() {
       this.pageType = 3;
+    },
+    rememberChangeHandle(val) {
+      if (val) {
+      } else {
+      }
+    },
+    // 储存表单信息
+    setUserInfo: function() {
+      // 判断用户是否勾选记住密码，如果勾选，向cookie中储存登录信息，
+      // 如果没有勾选，储存的信息为空
+      if (this.isRememberPsw) {
+        this.setCookie("username", this.ruleForm.userName, 7);
+        // base64加密密码
+        console.log("this.ruleForm.pass0", this.ruleForm.pass0);
+        let passWord = Base64.encode(this.ruleForm.pass0);
+        console.log("base64加密密码", passWord);
+        this.setCookie("password", passWord, 7);
+        this.setCookie("remember", this.isRememberPsw, 7);
+      } else {
+        this.setCookie("username", "");
+        this.setCookie("password", "");
+      }
+    },
+    // 获取cookie
+    getCookie: function(key) {
+      if (document.cookie.length > 0) {
+        var start = document.cookie.indexOf(key + "=");
+        if (start !== -1) {
+          start = start + key.length + 1;
+          var end = document.cookie.indexOf(";", start);
+          if (end === -1) end = document.cookie.length;
+          console.log(
+            "document.cookie.substring(start, end)",
+            document.cookie.substring(start, end)
+          );
+          console.log(
+            "unescape",
+            unescape(document.cookie.substring(start, end))
+          );
+          return unescape(document.cookie.substring(start, end));
+        }
+      }
+      return "";
+    },
+    // 保存cookie
+    setCookie: function(cName, value, expiredays) {
+      var exdate = new Date();
+      exdate.setDate(exdate.getDate() + expiredays);
+      document.cookie =
+        cName +
+        "=" +
+        decodeURIComponent(value) +
+        (expiredays == null ? "" : ";expires=" + exdate.toGMTString()); //时间点 'Thu, 16 Dec 2021 06:50:56 GMT'
     }
   }
 };

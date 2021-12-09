@@ -154,6 +154,7 @@ export default {
 .s-canvas {
   height: 38px;
   margin-left: 18px;
+  cursor: pointer;
   canvas {
     // margin-top: 1px;
   }
