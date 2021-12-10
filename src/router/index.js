@@ -286,7 +286,39 @@ const routes = [{
             meta: {
               title: '无限滚动'
             }
-          }   
+          },
+          {
+            path: 'divider',
+            name: 'divider',
+            component: () => import('../views/manage-system-layout/pages/elementui/divider.vue'),
+            meta: {
+              title: '分割线'
+            }
+          },
+          {
+            path: 'drawer',
+            name: 'drawer',
+            component: () => import('../views/manage-system-layout/pages/elementui/drawer.vue'),
+            meta: {
+              title: '抽屉'
+            }
+          },
+          {
+            path: 'dialog',
+            name: 'dialog',
+            component: () => import('../views/manage-system-layout/pages/elementui/dialog.vue'),
+            meta: {
+              title: '对话框'
+            }
+          },
+          {
+            path: 'tag',
+            name: 'tag',
+            component: () => import('../views/manage-system-layout/pages/elementui/tag.vue'),
+            meta: {
+              title: '标签'
+            }
+          }
         ]
       },
       {

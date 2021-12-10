@@ -19,6 +19,10 @@
         <el-menu-item index="/manage-system-layout/elementui/card"><i class="el-icon-postcard"></i>卡片</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/calendar"><i class="el-icon-date"></i>日历</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/infiniteScroll"><i class="el-icon-tickets"></i>无限滚动</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/divider"><i class="el-icon-minus"></i>分割线</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/drawer"><i class="el-icon-d-arrow-left"></i>抽屉</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/dialog"><i class="el-icon-chat-square"></i>对话框</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/tag"><i class="el-icon-collection-tag"></i>标签</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">
