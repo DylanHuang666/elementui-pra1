@@ -326,6 +326,14 @@ const routes = [{
             meta: {
               title: '标记'
             }
+          },
+          {
+            path: 'avatar',
+            name: 'avatar',
+            component: () => import('../views/manage-system-layout/pages/elementui/avatar.vue'),
+            meta: {
+              title: '头像'
+            }
           }
         ]
       },

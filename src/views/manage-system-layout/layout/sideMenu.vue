@@ -24,6 +24,7 @@
         <el-menu-item index="/manage-system-layout/elementui/dialog"><i class="el-icon-chat-square"></i>对话框</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/tag"><i class="el-icon-collection-tag"></i>标签</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/badge"><i class="el-icon-news"></i>标记</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/avatar"><i class="el-icon-picture-outline-round"></i>头像</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">
