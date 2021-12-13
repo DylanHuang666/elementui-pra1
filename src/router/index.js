@@ -318,6 +318,14 @@ const routes = [{
             meta: {
               title: '标签'
             }
+          },
+          {
+            path: 'badge',
+            name: 'badge',
+            component: () => import('../views/manage-system-layout/pages/elementui/badge.vue'),
+            meta: {
+              title: '标记'
+            }
           }
         ]
       },
