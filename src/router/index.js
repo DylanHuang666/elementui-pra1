@@ -334,6 +334,38 @@ const routes = [{
             meta: {
               title: '头像'
             }
+          },
+          {
+            path: 'alert',
+            name: 'alert',
+            component: () => import('../views/manage-system-layout/pages/elementui/alert.vue'),
+            meta: {
+              title: '警告'
+            }
+          },
+          {
+            path: 'message',
+            name: 'message',
+            component: () => import('../views/manage-system-layout/pages/elementui/message.vue'),
+            meta: {
+              title: '消息提示'
+            }
+          },
+          {
+            path: 'messageBox',
+            name: 'messageBox',
+            component: () => import('../views/manage-system-layout/pages/elementui/messageBox.vue'),
+            meta: {
+              title: '消息确认弹框'
+            }
+          },
+          {
+            path: 'notification',
+            name: 'notification',
+            component: () => import('../views/manage-system-layout/pages/elementui/notification.vue'),
+            meta: {
+              title: '通知'
+            }
           }
         ]
       },
