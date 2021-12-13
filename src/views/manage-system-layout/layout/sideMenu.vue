@@ -29,6 +29,7 @@
         <el-menu-item index="/manage-system-layout/elementui/message"><i class="el-icon-chat-line-round"></i>消息提示</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/messageBox"><i class="el-icon-chat-line-square"></i>消息确认弹框</el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/notification"><i class="el-icon-bell"></i>通知</el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/image"><i class="el-icon-picture-outline"></i>图片</el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

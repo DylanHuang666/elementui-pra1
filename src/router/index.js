@@ -366,6 +366,14 @@ const routes = [{
             meta: {
               title: '通知'
             }
+          },
+          {
+            path: 'image',
+            name: 'image',
+            component: () => import('../views/manage-system-layout/pages/elementui/image.vue'),
+            meta: {
+              title: '图片'
+            }
           }
         ]
       },
