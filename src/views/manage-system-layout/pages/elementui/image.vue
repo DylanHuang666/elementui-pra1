@@ -49,6 +49,24 @@
         </div>
       </div>
     </el-card>
+
+    <el-card>
+      <h3>懒加载</h3>
+      <!-- 可通过lazy开启懒加载功能，当图片滚动到可视范围内才会加载。可通过scroll-container来设置滚动容器，
+      若未定义，则为最近一个overflow值为auto或scroll的父元素。-->
+      <!-- ？？？没有效果，给父级.demo-image__lazy加了overflow:auto;后就没有图片了（dom没有生成image元素），并且也没有懒加载效果？？？ -->
+      <div class="lazy">
+        <el-image v-for="url in urls" :key="url" :src="url" lazy></el-image>
+      </div>
+    </el-card>
+
+    <el-card>
+      <!-- preview-src-list 大图预览图片列表-->
+      <h3>大图预览</h3>
+      <div class="demo-image__preview">
+        <el-image style="width: 100px; height: 100px" :src="url" :preview-src-list="urls"></el-image>
+      </div>
+    </el-card>
   </div>
 </template>
 
@@ -60,7 +78,17 @@ export default {
       url:
         "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
       src:
-        "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg"
+        "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg",
+      urls: [
+        "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+        "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
+        "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
+        "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
+        "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
+        "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
+        "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
+        "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
+      ]
     };
   }
 };
@@ -89,15 +117,20 @@ export default {
     /deep/.image-slot {
       width: 300px;
       height: 200px;
-      background: #F5F7FA;
+      background: #f5f7fa;
       display: flex;
       justify-content: center;
       align-items: center;
-      i{
+      i {
         font-size: 30px;
-        color: #C0C4CC;
+        color: #c0c4cc;
       }
     }
   }
+}
+.lazy {
+  width: 800px;
+  height: 200px;
+  overflow: auto;
 }
 </style>
