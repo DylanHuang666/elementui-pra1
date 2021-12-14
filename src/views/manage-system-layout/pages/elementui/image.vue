@@ -1,6 +1,13 @@
 <template>
   <div>
     <!-- 图片容器，在保留原生img的特性下，支持懒加载，自定义占位、加载失败等 -->
+    <!-- 
+      fill: 缩放（不按图片比例）到填充整个父级元素
+      contain：按图片比例缩放，直到整体都在父级元素中，并居中呈现 
+      cover：缩放（按图片比例）到填充整个父级元素，并居中呈现 
+      none：不缩放，居中呈现 
+      scale-down：按图片比例缩放，直到整体都在父级元素中，并居中呈现
+      -->
     <el-card>
       <h3>基础用法</h3>
       <div class="demo-image">
@@ -74,7 +81,7 @@
 export default {
   data() {
     return {
-      fits: ["fill", "contain", "cover", "none", "scale-down"],
+      fits: ["fill", "contain", "cover", "none", "scale-down"], 
       url:
         "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
       src:
