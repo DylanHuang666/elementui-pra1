@@ -374,6 +374,14 @@ const routes = [{
             meta: {
               title: '图片'
             }
+          },
+          {
+            path: 'tabs',
+            name: 'tabs',
+            component: () => import('../views/manage-system-layout/pages/elementui/tabs.vue'),
+            meta: {
+              title: '标签页'
+            }
           }
         ]
       },
