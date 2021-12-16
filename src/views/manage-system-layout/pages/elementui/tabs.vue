@@ -53,6 +53,20 @@
         >{{item.content}}</el-tab-pane>
       </el-tabs>
     </el-card>
+    <el-card>
+      <h3>自定义增加标签页触发器</h3>
+      <div style="margin-bottom: 20px;">
+        <el-button size="small" @click="addTab(editableTabsValue)">add tab</el-button>
+      </div>
+      <el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
+        <el-tab-pane
+          v-for="(item) in editableTabs"
+          :key="item.name"
+          :label="item.title"
+          :name="item.name"
+        >{{item.content}}</el-tab-pane>
+      </el-tabs>
+    </el-card>
   </div>
 </template>
 
@@ -83,7 +97,7 @@ export default {
       //tab:被选中的标签 tab 实例
       console.log(tab, event);
     },
-    handleTabsEdit(targetName, action) {
+    handleTabsEdit(targetName, action) { //action:"add"/remove
       if (action === "add") {
         let newTabName = ++this.tabIndex + "";
         this.editableTabs.push({
@@ -110,6 +124,32 @@ export default {
         this.editableTabsValue = activeName;
         this.editableTabs = tabs.filter(tab => tab.name !== targetName);
       }
+    },
+    addTab(targetName) {
+      let newTabName = ++this.tabIndex + "";
+      this.editableTabs.push({
+        title: "New Tab",
+        name: newTabName,
+        content: "New Tab content"
+      });
+      this.editableTabsValue = newTabName;
+    },
+    removeTab(targetName) {
+      let tabs = this.editableTabs;
+      let activeName = this.editableTabsValue;
+      if (activeName === targetName) {
+        tabs.forEach((tab, index) => {
+          if (tab.name === targetName) {
+            let nextTab = tabs[index + 1] || tabs[index - 1];
+            if (nextTab) {
+              activeName = nextTab.name;
+            }
+          }
+        });
+      }
+
+      this.editableTabsValue = activeName;
+      this.editableTabs = tabs.filter(tab => tab.name !== targetName);
     }
   }
 };
