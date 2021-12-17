@@ -382,6 +382,22 @@ const routes = [{
             meta: {
               title: '标签页'
             }
+          },
+          {
+            path: 'steps',
+            name: 'steps',
+            component: () => import('../views/manage-system-layout/pages/elementui/steps.vue'),
+            meta: {
+              title: '步骤条'
+            }
+          },
+          {
+            path: 'timeline',
+            name: 'timeline',
+            component: () => import('../views/manage-system-layout/pages/elementui/timeline.vue'),
+            meta: {
+              title: '时间线'
+            }
           }
         ]
       },
