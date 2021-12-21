@@ -74,6 +74,9 @@
         <el-menu-item index="/manage-system-layout/elementui/timeline">
           <i class="el-icon-guide"></i>时间线
         </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/tree">
+          <i class="el-icon-folder-opened"></i>树形控件
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

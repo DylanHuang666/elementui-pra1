@@ -398,6 +398,14 @@ const routes = [{
             meta: {
               title: '时间线'
             }
+          },
+          {
+            path: 'tree',
+            name: 'tree',
+            component: () => import('../views/manage-system-layout/pages/elementui/tree.vue'),
+            meta: {
+              title: '树形控件'
+            }
           }
         ]
       },
