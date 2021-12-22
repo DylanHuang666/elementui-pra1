@@ -406,6 +406,14 @@ const routes = [{
             meta: {
               title: '树形控件'
             }
+          },
+          {
+            path: 'cascader',
+            name: 'cascader',
+            component: () => import('../views/manage-system-layout/pages/elementui/cascader.vue'),
+            meta: {
+              title: '级联选择器'
+            }
           }
         ]
       },

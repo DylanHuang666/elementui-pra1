@@ -77,6 +77,9 @@
         <el-menu-item index="/manage-system-layout/elementui/tree">
           <i class="el-icon-folder-opened"></i>树形控件
         </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/cascader">
+          <i class="el-icon-folder-add"></i>级联选择器
+        </el-menu-item>        
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">
