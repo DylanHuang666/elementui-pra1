@@ -79,7 +79,10 @@
         </el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/cascader">
           <i class="el-icon-folder-add"></i>级联选择器
-        </el-menu-item>        
+        </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/upload">
+          <i class="el-icon-upload2"></i>上传
+        </el-menu-item>     
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

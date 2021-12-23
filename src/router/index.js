@@ -414,6 +414,14 @@ const routes = [{
             meta: {
               title: '级联选择器'
             }
+          },
+          {
+            path: 'upload',
+            name: 'upload',
+            component: () => import('../views/manage-system-layout/pages/elementui/upload.vue'),
+            meta: {
+              title: '上传'
+            }
           }
         ]
       },
