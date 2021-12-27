@@ -20,8 +20,9 @@ VueRouter.prototype.push = function push(location) {
 
 const routes = [{
     path: '/',
-    name: 'Table',
-    component: Table
+    // name: 'Table',
+    // component: Table,
+    redirect:"/manage-system-layout",
   },
   {
     path: '/about',
