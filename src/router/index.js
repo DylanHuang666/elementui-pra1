@@ -423,6 +423,22 @@ const routes = [{
             meta: {
               title: '上传'
             }
+          },
+          {
+            path: 'tooltip',
+            name: 'tooltip',
+            component: () => import('../views/manage-system-layout/pages/elementui/tooltip.vue'),
+            meta: {
+              title: '文字提示'
+            }
+          },
+          {
+            path: 'link',
+            name: 'link',
+            component: () => import('../views/manage-system-layout/pages/elementui/link.vue'),
+            meta: {
+              title: '文字链接'
+            }
           }
         ]
       },

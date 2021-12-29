@@ -25,8 +25,7 @@
         element-loading-background="rgba(0, 0, 0, 0)"
       >
         <mainArea />
-        <el-backtop target=".s-main-box">
-        </el-backtop>
+        <el-backtop target=".s-main-box"></el-backtop>
       </el-main>
       <!-- 主区域 -->
     </el-container>
@@ -78,6 +77,26 @@ export default {
   height: 100vh;
   overflow-x: hidden;
 }
+
+/*滚动条样式*/
+//滚动条整体
+.el-aside::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+//滚动按钮样式
+.el-aside::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+//滚动条样式
+.el-aside::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+/*滚动条样式*/
 
 .el-main {
   // background-color: #e9eef3;

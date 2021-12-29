@@ -82,7 +82,13 @@
         </el-menu-item>
         <el-menu-item index="/manage-system-layout/elementui/upload">
           <i class="el-icon-upload2"></i>上传
-        </el-menu-item>     
+        </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/tooltip">
+          <i class="el-icon-chat-round"></i>文字提示
+        </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/link">
+          <i class="el-icon-link"></i>文字链接
+        </el-menu-item>  
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">
