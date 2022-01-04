@@ -439,6 +439,14 @@ const routes = [{
             meta: {
               title: '文字链接'
             }
+          },
+          {
+            path: 'check',
+            name: 'check',
+            component: () => import('../views/manage-system-layout/pages/elementui/check.vue'),
+            meta: {
+              title: '单/多选框，switch开关，滑块'
+            }
           }
         ]
       },
