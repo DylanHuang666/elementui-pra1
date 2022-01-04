@@ -445,7 +445,7 @@ const routes = [{
             name: 'check',
             component: () => import('../views/manage-system-layout/pages/elementui/check.vue'),
             meta: {
-              title: '单/多选框，switch开关，滑块'
+              title: '单/多选框,开关,滑块'
             }
           }
         ]
