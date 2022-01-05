@@ -463,6 +463,14 @@ const routes = [{
             meta: {
               title: '日期时间选择器'
             }
+          },
+          {
+            path: 'form',
+            name: 'form',
+            component: () => import('../views/manage-system-layout/pages/elementui/form.vue'),
+            meta: {
+              title: '表单'
+            }
           }
         ]
       },

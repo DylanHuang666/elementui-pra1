@@ -98,6 +98,9 @@
         <el-menu-item index="/manage-system-layout/elementui/DateTimePicker">
           <i class="el-icon-time"></i>日期时间选择器
         </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/form">
+          <i class="el-icon-s-claim"></i>表单
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">
