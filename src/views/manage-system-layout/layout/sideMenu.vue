@@ -92,6 +92,12 @@
         <el-menu-item index="/manage-system-layout/elementui/RadioCheckboxSwitchSlider">
           <i class="el-icon-document-checked"></i>单/多选框,开关,滑块
         </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/input">
+          <i class="el-icon-edit"></i>输入框
+        </el-menu-item>
+        <el-menu-item index="/manage-system-layout/elementui/DateTimePicker">
+          <i class="el-icon-time"></i>日期时间选择器
+        </el-menu-item>
       </el-submenu>
       <el-submenu index="2">
         <template slot="title">

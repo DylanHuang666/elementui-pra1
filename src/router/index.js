@@ -447,6 +447,22 @@ const routes = [{
             meta: {
               title: '单/多选框,开关,滑块'
             }
+          },
+          {
+            path: 'input',
+            name: 'input',
+            component: () => import('../views/manage-system-layout/pages/elementui/input.vue'),
+            meta: {
+              title: '输入框'
+            }
+          },
+          {
+            path: 'DateTimePicker',
+            name: 'DateTimePicker',
+            component: () => import('../views/manage-system-layout/pages/elementui/DateTimePicker.vue'),
+            meta: {
+              title: '日期时间选择器'
+            }
           }
         ]
       },
