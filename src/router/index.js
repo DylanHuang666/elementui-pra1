@@ -441,9 +441,9 @@ const routes = [{
             }
           },
           {
-            path: 'check',
-            name: 'check',
-            component: () => import('../views/manage-system-layout/pages/elementui/check.vue'),
+            path: 'RadioCheckboxSwitchSlider',
+            name: 'RadioCheckboxSwitchSlider',
+            component: () => import('../views/manage-system-layout/pages/elementui/RadioCheckboxSwitchSlider.vue'),
             meta: {
               title: '单/多选框,开关,滑块'
             }

@@ -89,7 +89,7 @@
         <el-menu-item index="/manage-system-layout/elementui/link">
           <i class="el-icon-link"></i>文字链接
         </el-menu-item>
-        <el-menu-item index="/manage-system-layout/elementui/check">
+        <el-menu-item index="/manage-system-layout/elementui/RadioCheckboxSwitchSlider">
           <i class="el-icon-document-checked"></i>单/多选框,开关,滑块
         </el-menu-item>
       </el-submenu>
