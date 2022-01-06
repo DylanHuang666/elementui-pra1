@@ -220,4 +220,4 @@ export default {
 .el-table .success-row {
   background: blue;
 }
-</style>>
+</style>
