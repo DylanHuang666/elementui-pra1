@@ -72,6 +72,33 @@
         </el-input>
       </div>
     </el-card>
+
+    <el-card>
+      <h3>InputNumber 计数器</h3>
+      <!-- step-strictly属性接受一个Boolean。如果这个属性被设置为true，则只能输入步数的倍数。 
+          设置 precision 属性可以控制数值精度，接收一个 Number。
+          size 大小
+      -->
+      <el-input-number
+        v-model="num"
+        @change="handleChange"
+        :step="2"
+        step-strictly
+        :precision="2"
+        :min="1"
+        :max="10"
+        label="描述文字"
+      ></el-input-number>
+
+      <h3>按钮位置</h3>
+      <el-input-number
+        v-model="num2"
+        controls-position="right"
+        @change="handleChange"
+        :min="1"
+        :max="10"
+      ></el-input-number>
+    </el-card>
   </div>
 </template>
 
@@ -90,8 +117,16 @@ export default {
       input5: "",
       input6: "",
       input7: "",
-      select: ""
+      select: "",
+      num: 1,
+      num2: 1
     };
+  },
+  methods: {
+    handleChange(value) {
+      //改变后的值
+      console.log("handleChange", value);
+    }
   }
 };
 </script>
