@@ -2,6 +2,8 @@
   <div>
     <!-- <clock /> -->
     <titleBar :options="options" />
+    <!-- <div>{{o.a.c}}</div> -->
+    <div>{{o.a}}</div>
   </div>
 </template>
 
@@ -22,8 +24,12 @@ export default {
         leftWith: "10",
         fontSize: "16",
         space: "20"
-      }
+      },
+      o:{}
     };
+  },
+  mounted(){
+    this.o = {a:{c:1}}
   }
 };
 </script>
