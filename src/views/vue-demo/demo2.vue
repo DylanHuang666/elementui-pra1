@@ -6,6 +6,7 @@
         {{list[index].text}}
       </el-tab-pane>
     </el-tabs>
+    <div>{{arr}}</div>
   </div>
 </template>
 
@@ -27,7 +28,11 @@ export default {
         //   }
         // ]
       },
-      list: []
+      list: [],
+      arr: [],
+      obj: {
+        a: 1
+      }
     };
   },
   watch: {
@@ -38,21 +43,24 @@ export default {
       immediate: true
     }
   },
-  beforeCreate(){
-    console.log('beforeCreate')
+  beforeCreate() {
+    console.log("beforeCreate");
   },
-  created(){
-    console.log('created')
+  created() {
+    console.log("created");
   },
-  beforeUpdate(){
-    console.log('beforeUpdate')
+  beforeUpdate() {
+    console.log("beforeUpdate");
   },
   updated() {
     let lll = this.list;
     console.log("updated", lll, this.detail);
   },
   mounted() {
-    console.log("mounted");
+    console.log(
+      "mounted--------------------------------------------------------------------------------"
+    );
+
     this.detail = {
       group: [
         {
@@ -69,12 +77,17 @@ export default {
     console.log("1111111");
     // let l = [];
     this.detail.group.forEach((i, k) => {
-      this.list.push({
-        text: ""
+      // this.list.push({
+      //   text: ""
+      // });
+      this.$set(this.list, k, {
+        text: "",
+        i:""
       });
+      this.$set(this.arr, k, k);
     });
     // this.list = l
-    console.log("22222222");
+    console.log("22222222",this.list,this.arr);
     this.detail.group.forEach((i, k) => {
       if (k == 0) {
         setTimeout(() => {
@@ -83,8 +96,16 @@ export default {
           // })
           console.log(555, k);
           this.$set(this.list, k, {
-            text: `图片${k + 1}`
+            text: `图片${k + 1}`,
+            i:k
           });
+          // this.list[k] = {
+          //   text: `图片${k + 1}`,
+          //   i:k
+          // };
+          this.$set(this.arr, k, k+1);
+          // this.arr[k] = k+1
+          console.log("this.list", this.list,this.arr);
           // l[k] = {
           //   text: `图片${k + 1}`
           // };
@@ -99,8 +120,16 @@ export default {
           // })
           console.log(555, k);
           this.$set(this.list, k, {
-            text: `图片${k + 1}`
+            text: `图片${k + 1}`,
+            i:k
           });
+          this.$set(this.arr, k, k+1);
+          // this.list[k] = {
+          //   text: `图片${k + 1}`,
+          //   i:k
+          // };
+          // this.arr[k] = k+1
+          console.log("this.list", this.list,this.arr);
           // l[k] = {
           //   text: `图片${k + 1}`
           // };
@@ -115,8 +144,16 @@ export default {
           // })
           console.log(555, k);
           this.$set(this.list, k, {
-            text: `图片${k + 1}`
+            text: `图片${k + 1}`,
+            i:k
           });
+          this.$set(this.arr, k, k+1);
+          // this.list[k] = {
+          //   text: `图片${k + 1}`,
+          //   i:k
+          // };
+          // this.arr[k] = k+1
+          console.log("this.list", this.list,this.arr);
           // l[k] = {
           //   text: `图片${k + 1}`
           // };
@@ -126,7 +163,8 @@ export default {
         }, 1000);
       }
     });
-  }
+  },
+  methods: {}
 };
 </script>
 
