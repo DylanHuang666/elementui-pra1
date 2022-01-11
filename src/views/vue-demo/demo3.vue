@@ -1,7 +1,7 @@
 <template>
   <div>
     999
-    <!-- <div>{{arr[0]}}</div> -->
+    <div>{{arr[0]}}</div>
     <div v-for="(item,index) in arr" :key="index">{{item}}</div>
     <el-button @click="clickHandle">点击</el-button>
 
@@ -18,7 +18,7 @@
   export default {
     data(){
       return {
-        arr:[],
+        arr:[0],
         obj:{a:1}
       }
     },
@@ -27,14 +27,13 @@
       console.log('this.obj前',this.obj)
       // this.arr = [1]
       // this.arr[0] = 1
-      this.$set(this.arr,0,{a:""})
+      this.$set(this.arr,0,1)
       console.log('set',this.arr)
+   
+      this.arr[0] = 2 //同步紧接着赋值，$set触发的重渲染会拿该值，(草，忘了数组直接赋值是不会有响应式的)
+     
       // setTimeout(()=>{
-        this.arr[0] = {a:2} //同步紧接着赋值，这样也让该项没有了observer,不过set触发的重渲染会拿该值，但是之后没有响应式的，所有之后更改不会重渲染，例如下面setTimeout，
-                            //只能用$set修改设值了
-      // },2000)
-      // setTimeout(()=>{
-      //   this.arr[0] = {a:3}
+      //   this.arr[0] = 3
       // },2000)
       console.log('this.arr后',this.arr)
       
@@ -48,6 +47,8 @@
       clickHandle(){
         // this.arr[0] = 1
         // this.obj.b = 3
+        // this.arr[0] = 3
+        // this.$set(this.arr,0,5)
       }
     }
   }

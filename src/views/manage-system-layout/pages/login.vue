@@ -452,6 +452,7 @@ export default {
   align-items: center;
   height: 100vh;
   background: linear-gradient(to bottom, #125777, #13598f);
+  min-height: 460px;
   &-box,
   .register-box,
   .forget-psw-box {
